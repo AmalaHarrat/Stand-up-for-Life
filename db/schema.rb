@@ -10,9 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_170013) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_143434) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "badges", force: :cascade do |t|
+    t.string "name"
+    t.integer "threshold"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.float "scoring"
+    t.bigint "user_id", null: false
+    t.bigint "mission_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mission_id"], name: "index_bookings_on_mission_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "missions", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "category"
+    t.string "address"
+    t.string "city"
+    t.date "date"
+    t.integer "duration"
+    t.string "max_participant"
+    t.string "integer"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_missions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +55,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_170013) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "organisme"
+    t.string "phone"
+    t.string "lastname"
+    t.string "firstname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "missions"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "missions", "users"
 end
