@@ -8,10 +8,7 @@ class Organismes::MissionsController < ApplicationController
   def new
   end
 
-  # def edit
-  # A VOIR SI NECESSAIRE
-  # end
+  def create
 
-  def update
   end
 end

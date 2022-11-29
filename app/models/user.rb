@@ -17,5 +17,4 @@ class User < ApplicationRecord
     # A calculer : incrementation
     100
   end
-
 end
