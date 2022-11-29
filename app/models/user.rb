@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :missions
   has_many :bookings
 
+  validates :phone, :firstname, presence: true
+
   def badge
     Badge.where("threshold > ?", total_score).first
   end
