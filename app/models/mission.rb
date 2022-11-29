@@ -2,6 +2,8 @@ class Mission < ApplicationRecord
   belongs_to :user
   has_many :bookings
 
+  has_one_attached :photo
+
   validates :title, :description, :category, :city, :max_participant, :duration, :date, presence: true
   validates :description, length: { minimum: 10 }
   validate :user_an_organisation?, on: :create

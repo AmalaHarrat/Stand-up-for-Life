@@ -1,4 +1,7 @@
 class BookingsController < ApplicationController
-  def update
+  def show
+  end
+
+  def create
   end
 end
