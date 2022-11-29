@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :missions
   has_many :bookings
 
+  has_one_attached :photo
+
   def badge
     Badge.where("threshold > ?", total_score).first
   end
