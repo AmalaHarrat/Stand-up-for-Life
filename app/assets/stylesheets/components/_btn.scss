@@ -12,3 +12,18 @@
   opacity: 1;
   color: #5b8570;
 }
+
+
+.btn-devise {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #91b0a0;
+  border: #91b0a0;
+  color: white;
+
+  &.btn-devise:hover {
+    background-color: #5b8570;
+    border: #5b8570;
+    color: white;
+  }
+}
