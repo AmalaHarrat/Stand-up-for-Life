@@ -1,9 +1,35 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=image_path('banner.jpg')%>);">
-  <div class="container">
-    <h1>Missions#index</h1>
+  <div class="container_logo">
+    <%# <h1>StandUpForLife </h1>  %>
+    <img src="<%= image_path('logo.png') %>" alt="logo">
     <%# <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
     <p>Change your life and learn to code at one of our campuses around the world.</p> %>
     <%# <a class="btn btn-flat" href="#">Apply now</a> %>
   <%= link_to " ⏎ Back", root_path, class: "btn btn-ghost", style: "color: white; border: 1px solid white;" %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="cards-mission">
+      <% @missions.each do |mission| %>
+        <%= link_to mission_path(mission) do %>
+          <div class="zoom">
+            <div class="card-mission m-3 rounded-4">
+            <% if mission.photo.key? %>
+              <%= cl_image_tag mission.photo.key, height: 300, width: 400 %>
+              <% else %>
+                <img src="<%=image_path('benevoles.jpg')%>" alt="background">
+              <% end %>
+              <div class="card-mission-infos">
+                <div>
+                  <h2><%= mission.title %></h2>
+                  <p><%= mission.category %> Ville: <%= mission.city %></p>
+                  <p>Le <%= mission.date %>, donnez <%= mission.duration %>h de votre temps</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
   </div>
 </div>
