@@ -1,10 +1,11 @@
 class Organisation::MissionsController < ApplicationController
   def index
     # Afficher toutes MES missions
-    @missions = Mission.all
+    @missions = current_user.missions
   end
 
   def show
+    @mission = Mission.find(params[:id])
   end
 
   def new

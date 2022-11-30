@@ -1,10 +1,27 @@
-<h1>Organisation::Missions#index</h1>
+<h1 class= "m-5 text-center"> Bonjour <%= current_user.firstname %> ! Voici vos missions:</h1>
 
-<%@missions.each do |mission| %>
-<h2><%= mission.title %></h2>
-<small>Durée: <%= mission.duration %> • <%= mission.city %>• <%= mission.category %></small>
-<p><%= truncate(mission.description, :length => 100)%></p>
-<div>
-<p><%= mission.date %></p>
+<div class="container">
+  <div class="cards-mission">
+    <%@missions.each do |mission| %>
+      <%= link_to organisation_mission_path(mission) do %>
+      <div class="card-mission mb-3">
+        <img src="<%=image_path('banner2.jpg')%>" alt="Image de l'organisme">
+        <div class="card-mission-infos">
+          <h3><%= mission.title %></h3>
+          <div class="mb-3">
+            <small class="text-muted"> Durée: <%= mission.duration %> h • <%= mission.category %></small>
+          </div>
+            <div class="card-mission-infos-location">
+              <div>
+                <p class="small"><u> Date: </u><%= mission.date %></p>
+                <p class="small"><u> Heure: </u>??</p>
+              </div>
+              <small class="card-mission-location"> 📍 <%=mission.city%></small>
+            </div>
+          <p><%= truncate(mission.description, :length => 100)%></p>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
-<% end %>

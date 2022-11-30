@@ -1,0 +1,67 @@
+.card-mission {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-mission > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-mission h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-mission p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-mission a {
+  text-decoration: none;
+  color: #564C4D;
+  margin: 4px;
+}
+
+.card-mission .card-mission-infos {
+  padding: 16px;
+}
+
+.card-mission .card-mission-infos-location {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card-mission-infos a {
+  text-decoration: none;
+  color: #564C4D;
+}
+
+
+.cards-mission {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #564C4D;
+
+  &:hover {
+    color: #564C4D;
+  }
+}
+
+.zoom:hover {
+  transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transition: 0.3s;
+  // transition-timing-function: ease-in-out;
+  }
