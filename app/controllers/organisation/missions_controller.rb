@@ -14,14 +14,15 @@ class Organisation::MissionsController < ApplicationController
   end
 
   def create
-    # @mission = Mission.create(mission_params)
-    # # @mission.user = current_user
-    # if @mission.save
-    #   redirect_to organisation_mission_path(@mission)
-    # else
-    #   render :new, status: :unprocessable_entity
-    # end
+    @mission = Mission.create(mission_params)
+    @mission.user = current_user
+    if @mission.save
+      redirect_to organisation_mission_path(@mission)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
+
   # def edit
   # A VOIR SI NECESSAIRE
   # end
@@ -29,6 +30,6 @@ class Organisation::MissionsController < ApplicationController
   private
 
   def mission_params
-    params.require(:mission).permit(:title, :description, :category, :address, :city, :date, :duration, :max_participant, :photo)
+    params.require(:mission).permit(:title, :description, :category, :address, :city, :date, :duration, :max_participant)
   end
 end
