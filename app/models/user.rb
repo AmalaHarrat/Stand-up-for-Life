@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_many :missions
   has_many :bookings
 
+  has_one_attached :photo
+  
+  validates :phone, :firstname, presence: true
+
   def badge
     Badge.where("threshold > ?", total_score).first
   end
@@ -15,5 +19,4 @@ class User < ApplicationRecord
     # A calculer : incrementation
     100
   end
-
 end

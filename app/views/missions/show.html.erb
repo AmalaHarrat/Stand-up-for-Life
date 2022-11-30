@@ -1,2 +1,5 @@
 <h1>Missions#show</h1>
-<p>Find me in app/views/missions/show.html.erb</p>
+<%= simple_form_for([@mission, Booking.new]) do |f| %>
+        <%= f.input :mission_id, input_html: {value: @mission.id}, as: :hidden %>
+        <%= f.submit "Je participe !", class: "btn btn-ghost mb-3"%>
+      <% end %>

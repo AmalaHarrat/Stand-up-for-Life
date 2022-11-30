@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "missions#index", as: :missions
+  root to: "missions#index"
   resources :users, only: [:show]
   get "dashboard", to: "dashboards#show"
   # shallow: supprime nesté si pas besoin
