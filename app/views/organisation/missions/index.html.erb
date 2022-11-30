@@ -1,4 +1,4 @@
-<h1 class= "m-5 text-center"> Bonjour <%= current_user.firstname %> ! Voici vos missions:</h1>
+<h1 class= "m-5 text-center"> Bonjour <%= current_user.firstname %> ! <br> Voici vos missions:</h1>
 
 <div class="container">
   <div class="cards-mission">
@@ -6,7 +6,11 @@
     <div class="zoom">
       <%= link_to organisation_mission_path(mission) do %>
         <div class="card-mission mb-3">
-          <img src="<%=image_path('banner2.jpg')%>" alt="Image de l'organisme">
+          <% if mission.photo.key? %>
+            <%= cl_image_tag mission.photo.key, height: 300, width: 400 %>
+          <% else %>
+            <img src="<%=image_path('default.jpg')%>" alt="background">
+          <% end %>
           <div class="card-mission-infos">
             <h3><%= mission.title %></h3>
             <div class="mb-3">

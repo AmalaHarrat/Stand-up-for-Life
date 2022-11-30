@@ -12,24 +12,31 @@
 <div class="container">
   <div class="cards-mission">
       <% @missions.each do |mission| %>
-        <%= link_to mission_path(mission) do %>
-          <div class="zoom">
-            <div class="card-mission m-3 rounded-4">
-            <% if mission.photo.key? %>
-              <%= cl_image_tag mission.photo.key, height: 300, width: 400 %>
-              <% else %>
-                <img src="<%=image_path('benevoles.jpg')%>" alt="background">
-              <% end %>
+        <div class="zoom">
+          <%= link_to mission_path(mission) do %>
+            <div class="card-mission m-3 ">
+              <% if mission.photo.key? %>
+                <%= cl_image_tag mission.photo.key, height: 300, width: 400 %>
+                <% else %>
+                  <img src="<%=image_path('default.jpg')%>" alt="background">
+                <% end %>
               <div class="card-mission-infos">
-                <div>
-                  <h2><%= mission.title %></h2>
-                  <p><%= mission.category %> Ville: <%= mission.city %></p>
-                  <p>Le <%= mission.date %>, donnez <%= mission.duration %>h de votre temps</p>
+                <h3><%= mission.title %></h3>
+                  <div class="mb-3">
+                  <small class="text-muted"> Durée: <%= mission.duration %> h • <%= mission.category %></small>
+                  </div>
+                <div class="card-mission-infos-location">
+                  <div>
+                    <p class="small"><u> Date: </u><%= mission.date %></p>
+                    <p class="small"><u> Heure: </u>??</p>
+                  </div>
+                  <small class="card-mission-location"> 📍 <%=mission.city%></small>
+                </div>
+                  <p><%= truncate(mission.description, :length => 100)%></p>
                 </div>
               </div>
-            </div>
-          </div>
         <% end %>
+          </div>
       <% end %>
   </div>
 </div>
