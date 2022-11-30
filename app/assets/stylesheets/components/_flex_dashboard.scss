@@ -1,4 +1,31 @@
-.user_missions {
-display: flex;
+#dashboard-header {
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+}
 
+#infos-user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#body-dashboard{
+  width: 100%;
+}
+
+#user-progress {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+#badges {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+#user-missions{
+  display: flex;
+  width: 50%;
 }
