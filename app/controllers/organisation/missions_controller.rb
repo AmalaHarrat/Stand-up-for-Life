@@ -26,9 +26,6 @@ class Organisation::MissionsController < ApplicationController
   # A VOIR SI NECESSAIRE
   # end
 
-  def update
-  end
-
   private
 
   def mission_params
