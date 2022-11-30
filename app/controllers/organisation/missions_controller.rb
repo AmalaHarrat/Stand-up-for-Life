@@ -1,5 +1,7 @@
-class Organismes::MissionsController < ApplicationController
+class Organisation::MissionsController < ApplicationController
   def index
+    # Afficher toutes MES missions
+    @missions = Mission.all
   end
 
   def show
