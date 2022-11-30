@@ -1,4 +1,5 @@
 class Organisation::MissionsController < ApplicationController
+
   def index
     # Afficher toutes MES missions
     @missions = current_user.missions
@@ -13,14 +14,13 @@ class Organisation::MissionsController < ApplicationController
   end
 
   def create
-    raise
-    @mission = Mission.create(mission_params)
-    # @mission.user = current_user
-    if @mission.save
-      redirect_to organisation_mission_path(@mission)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    # @mission = Mission.create(mission_params)
+    # # @mission.user = current_user
+    # if @mission.save
+    #   redirect_to organisation_mission_path(@mission)
+    # else
+    #   render :new, status: :unprocessable_entity
+    # end
   end
   # def edit
   # A VOIR SI NECESSAIRE

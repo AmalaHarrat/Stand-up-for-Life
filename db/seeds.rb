@@ -7,14 +7,14 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning database..."
-User.destroy_all
-Mission.destroy_all
-Booking.destroy_all
 Badge.destroy_all
+Booking.destroy_all
+Mission.destroy_all
+User.destroy_all
 
 puts "USERS CREATION"
 alice = User.create(lastname: "AA", firstname: "Alice", email: "alice@test.fr", password: "qwerty", phone: "0609090909", organisme: false)
-benoit = User.create(lastname:, firstname: "Maison de la nature", email: "benoit@test.fr", password: "azerty", phone: "0601010101", organisme: true)
+benoit = User.create(lastname:"", firstname: "Maison de la nature", email: "benoit@test.fr", password: "azerty", phone: "0601010101", organisme: true)
 nicolas = User.create(lastname: "NN", firstname: "Nicolas", email: "nicolas@test.fr", password: "azerty", phone: "0603030303", organisme: false)
 saliha = User.create(lastname: "NN", firstname: "La Gamelle Bordelaise", email: "saliha@test.fr", password: "azerty", phone: "0603030303", organisme: true)
 
