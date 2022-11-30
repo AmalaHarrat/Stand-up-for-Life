@@ -13,6 +13,7 @@ class Organisation::MissionsController < ApplicationController
   end
 
   def create
+    raise
     @mission = Mission.create(mission_params)
     # @mission.user = current_user
     if @mission.save
