@@ -3,25 +3,27 @@
 <div class="container">
   <div class="cards-mission">
     <%@missions.each do |mission| %>
+    <div class="zoom">
       <%= link_to organisation_mission_path(mission) do %>
-      <div class="card-mission mb-3">
-        <img src="<%=image_path('banner2.jpg')%>" alt="Image de l'organisme">
-        <div class="card-mission-infos">
-          <h3><%= mission.title %></h3>
-          <div class="mb-3">
-            <small class="text-muted"> Durée: <%= mission.duration %> h • <%= mission.category %></small>
-          </div>
-            <div class="card-mission-infos-location">
-              <div>
-                <p class="small"><u> Date: </u><%= mission.date %></p>
-                <p class="small"><u> Heure: </u>??</p>
-              </div>
-              <small class="card-mission-location"> 📍 <%=mission.city%></small>
+        <div class="card-mission mb-3">
+          <img src="<%=image_path('banner2.jpg')%>" alt="Image de l'organisme">
+          <div class="card-mission-infos">
+            <h3><%= mission.title %></h3>
+            <div class="mb-3">
+              <small class="text-muted"> Durée: <%= mission.duration %> h • <%= mission.category %></small>
             </div>
-          <p><%= truncate(mission.description, :length => 100)%></p>
+              <div class="card-mission-infos-location">
+                <div>
+                  <p class="small"><u> Date: </u><%= mission.date %></p>
+                  <p class="small"><u> Heure: </u>??</p>
+                </div>
+                <small class="card-mission-location"> 📍 <%=mission.city%></small>
+              </div>
+            <p><%= truncate(mission.description, :length => 100)%></p>
+          </div>
         </div>
-      </div>
       <% end %>
+      </div>
     <% end %>
   </div>
 </div>

@@ -1,2 +1,21 @@
-<h1>Organismes::Missions#new</h1>
-<p>Find me in app/views/organismes/missions/new.html.erb</p>
+<div class="container">
+<h1>Crée ta nouvelle mission</h1>
+<div class="container">
+  <div class="row">
+    <div class="col border-radius">
+      <%= simple_form_for(@mission) do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :category, as: :select, collection: ["humanitaire 🫶🏻", "environnement 🌱", "animaux 🐶"] %>
+        <%= f.input :address %>
+        <%= f.input :city %>
+        <%= f.input :date, html5: true %>
+        <%= f.input :duration %>
+        <%= f.input :max_participant %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit "J'ajoute cette mission", class: "btn btn-ghost mb-3"%>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
