@@ -1,0 +1,18 @@
+.participants{
+  /* From https://css.glass */
+  border-radius: 20px;
+  background-image: linear-gradient(to right bottom, #91b0a0, #98b7a7, #9fbeae, #a7c6b6, #aecdbd);
+  -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 3px rgba(0,0,0,.2);
+  padding: 25px;
+  color: white;
+}
+
+.participants h2 {
+  text-align: center;
+}
+
+li{
+  text-decoration: none;
+  // list-style: none;
+}
