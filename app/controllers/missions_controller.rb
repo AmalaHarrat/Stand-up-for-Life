@@ -1,6 +1,6 @@
 class MissionsController < ApplicationController
   def index
-    @mission = Mission.all
+    @missions = Mission.all
   end
 
   def show
