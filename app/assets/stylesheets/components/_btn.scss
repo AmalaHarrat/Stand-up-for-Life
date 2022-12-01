@@ -12,3 +12,33 @@
   opacity: 1;
   color: #5b8570;
 }
+
+.btn-ghost-white {
+  color: white;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost-white:hover {
+  color: white;
+  box-shadow: white;
+  transform: scale(1.05); //rotate(-1deg)
+}
+
+
+.btn-devise {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #91b0a0;
+  border: #91b0a0;
+  color: white;
+
+  &.btn-devise:hover {
+    background-color: #5b8570;
+    border: #5b8570;
+    color: white;
+  }
+}

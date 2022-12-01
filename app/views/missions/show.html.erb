@@ -1,5 +1,43 @@
-<h1>Missions#show</h1>
-<%= simple_form_for([@mission, Booking.new]) do |f| %>
+<div class="container my-3 mx-5">
+  <div class="col-5">
+    <div class="d-md-flex justify-content-between">
+        <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
+      <h1><%= current_user.firstname %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-9">
+    <div class="images">
+      <% if @mission.photo.key? %>
+        <%= cl_image_tag mission.photo.key, height: 300, width: 400 %>
+      <% else %>
+        <img src="<%=image_path('default.jpg')%>" alt="background">
+      <% end %>
+    </div>
+    <div class="mb-3">
+      <h2><%= @mission.title %></h2>
+      <small class="text-muted">Durée: <%= @mission.duration%> h • <%=@mission.city %> • <%= @mission.category %></small>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-10">
+    <div class="d-md-flex justify-content-between">
+      <div class="mb-3">
+        <p class="m-0"><u>Date:</u> <%= @mission.date %></p>
+        <p class="m-0"><u>Heure:</u> ??</p>
+        <p><u>Lieu de rendez-vous:</u> <%= @mission.address %></p>
+        <p><%= @mission.description%></p>
+      </div>
+      <div class="col-2">
+        <%= simple_form_for([@mission, Booking.new]) do |f| %>
         <%= f.input :mission_id, input_html: {value: @mission.id}, as: :hidden %>
         <%= f.submit "Je participe !", class: "btn btn-ghost mb-3"%>
-      <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

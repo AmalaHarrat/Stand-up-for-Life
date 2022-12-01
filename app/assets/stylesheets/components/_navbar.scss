@@ -1,12 +1,33 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
+.navbar-lewagon .name a{
+  text-align: center;
+  color: #91b0a0;
+}
+
+.navbar-lewagon .dropdown a{
+  color: #91b0a0;
+}
+
+.navbar-lewagon .navbar-brand {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: auto;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+
 }

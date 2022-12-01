@@ -1,9 +1,42 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=image_path('banner.jpg')%>);">
-  <div class="container">
-    <h1>Missions#index</h1>
+  <div class="container_logo">
+    <%# <h1>StandUpForLife </h1>  %>
+    <img src="<%= image_path('logo.png') %>" alt="logo">
     <%# <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
     <p>Change your life and learn to code at one of our campuses around the world.</p> %>
     <%# <a class="btn btn-flat" href="#">Apply now</a> %>
-  <%= link_to " ⏎ Back", root_path, class: "btn btn-ghost", style: "color: white; border: 1px solid white;" %>
+  <%= link_to " ⏎ Back", root_path, class: "btn btn-ghost-white", style: "color: white; border: 1px solid white;" %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="cards-mission">
+      <% @missions.each do |mission| %>
+        <div class="zoom">
+          <%= link_to mission_path(mission) do %>
+            <div class="card-mission m-3 ">
+              <% if mission.photo.key? %>
+                <%= cl_image_tag mission.photo.key, height: 300, width: 400 %>
+                <% else %>
+                  <img src="<%=image_path('default.jpg')%>" alt="background">
+                <% end %>
+              <div class="card-mission-infos">
+                <h3><%= mission.title %></h3>
+                  <div class="mb-3">
+                  <small class="text-muted"> Durée: <%= mission.duration %> h • <%= mission.category %></small>
+                  </div>
+                <div class="card-mission-infos-location">
+                  <div>
+                    <p class="small"><u> Date: </u><%= mission.date %></p>
+                    <p class="small"><u> Heure: </u>??</p>
+                  </div>
+                  <small class="card-mission-location"> 📍 <%=mission.city%></small>
+                </div>
+                  <p><%= truncate(mission.description, :length => 100)%></p>
+                </div>
+              </div>
+        <% end %>
+          </div>
+      <% end %>
   </div>
 </div>
