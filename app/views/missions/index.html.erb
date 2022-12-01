@@ -15,7 +15,7 @@
         <div class="zoom">
           <%= link_to mission_path(mission) do %>
             <div class="card-mission m-3 ">
-              <% if mission.photo.key? %>
+              <% if mission.photos.key? %>
                 <%= cl_image_tag mission.photo.key, height: 300, width: 400 %>
                 <% else %>
                   <img src="<%=image_path('default.jpg')%>" alt="background">

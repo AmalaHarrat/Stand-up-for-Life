@@ -30,6 +30,6 @@ class Organisation::MissionsController < ApplicationController
   private
 
   def mission_params
-    params.require(:mission).permit(:title, :description, :category, :address, :city, :date, :duration, :max_participant)
+    params.require(:mission).permit(:title, :description, :category, :address, :city, :date, :duration, :max_participant, :photos )
   end
 end

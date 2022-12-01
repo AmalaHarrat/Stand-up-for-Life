@@ -10,7 +10,7 @@
 <div class="container">
   <div class="col-9">
     <div class="images">
-      <% if @mission.photo.key? %>
+      <% if @mission.photos.key? %>
         <%= cl_image_tag mission.photo.key, height: 300, width: 400 %>
       <% else %>
         <img src="<%=image_path('default.jpg')%>" alt="background">
