@@ -13,6 +13,21 @@
   color: #5b8570;
 }
 
+.btn-ghost-white {
+  color: white;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost-white:hover {
+  color: white;
+  box-shadow: white;
+  transform: scale(1.05); //rotate(-1deg)
+}
+
 
 .btn-devise {
   width: 100%;
