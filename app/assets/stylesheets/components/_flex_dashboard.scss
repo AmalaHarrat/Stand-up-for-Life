@@ -7,11 +7,13 @@
   margin: 0px;
 }
 .mission-table{
-  background-color: red;
   height: 700px;
   width: 650px;
   margin: 5px;
 
+  h3{
+    padding-top: 20px;
+  }
 }
 
 .score-table{
@@ -30,7 +32,9 @@
 }
 
 .badge-table{
-  background-color: aqua;
+  background-color: rgba(255, 255, 255, 0.532);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   height: 35vh;
   width: 100%;
   position: absolute;
