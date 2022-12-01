@@ -2,13 +2,13 @@ class Mission < ApplicationRecord
   belongs_to :user
   has_many :bookings
 
-  has_one_attached :photos
+  has_many_attached :photos
 
-  # validates :title, :description, :category, :city, :max_participant, :duration, :date, presence: true
-  # validates :description, length: { minimum: 10 }
-  # validates :city, format: { with: /[a-zA-Z]/ }
-  # validate :expiration_date_cannot_be_in_the_past
-  # validate :user_an_organisation?, on: :create
+  validates :title, :description, :category, :city, :max_participant, :duration, :date, presence: true
+  validates :description, length: { minimum: 10 }
+  validates :city, format: { with: /[a-zA-Z]/ }
+  validate :expiration_date_cannot_be_in_the_past
+  validate :user_an_organisation?, on: :create
 
   # Ceci est une validation custom
   # Elle permet de creer une mission QUE si organisme = true
