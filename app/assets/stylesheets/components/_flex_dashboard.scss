@@ -1,49 +1,109 @@
-#dashboard-header {
-  justify-content: center;
-  width: 100%;
-  gap: 15px;
-}
-
-
-#infos-user {
+.dashboard-body{
+  height: 900px;
+  width: auto;
   display: flex;
-  align-items: center;
-  gap: 15px;
+  justify-content: space-around;
+  padding: 0px;
+  margin: 0px;
+}
+.mission-table{
+  height: 700px;
+  width: 650px;
+  margin: 5px;
+
+  h3{
+    padding-top: 20px;
+  }
 }
 
-#body-dashboard{
-  width: 100%;
+.score-table{
+  background-image: linear-gradient(to right bottom, #BBD2C5, #536976,);
+  height: 700px;
+  width: 650px;
+  margin: 5px;
+  position: relative;
+  padding: 0px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+    h3{
+      color: white;
+    }
 }
-#gamification {
-  box-shadow: 0 0 5px 0;
-  width:50%;
+
+.badge-table{
+  background-color: rgba(255, 255, 255, 0.532);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 35vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+
+// TEXT:
+
+#dashboard h1 {
+  color: #91b0a0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#dashboard h2{
+  margin-top: 10px;
+}
+
+#dashboard h3{
+  font-weight: lighter;
+  margin-top: 10px;
+}
+
+// BADGES
+
+#score{
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 3px rgba(0,0,0,.2);
+  padding: 25px;
+  color: #91b0a0;
+  text-shadow: 1px 2px 3px rgba(0,0,0,.2);
+  width: 200px;
   height: 200px;
-}
-#user-progress {
-  display: flex;
-  justify-content: center;
-  box-shadow: 0 0 5px 0;
-  width: 50%;
-  height: 50px;
-  margin-top: 45px;
-  margin-bottom: 15px;
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  padding: 10px;
+
+    p{
+      color: #91b0a0;
+      font-size: 120px;
+      text-align: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+  }
+
+    em {
+      text-shadow: none;
+      text-align: center;
+      margin: 0px;
+      padding: 0px;
+    }
 }
 
-#badges {
-  display: flex;
-  justify-content: flex-end;
-  box-shadow: 0 0 5px 0;
-  height: 50px;
-  margin-top: 45px;
-  margin-bottom: 15px
+#score-calculation p {
+  position: absolute;
+  top: 320px;
+  padding-left: 25px;
+  color: white;
 }
 
-#user-missions{
-  display: flex;
-  box-shadow: 0 0 5px 0;
-  width: 50%;
-}
-
-#dashboard-header  h1{
-  text-align: center;
+.badge-img{
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 40px;
+  left: 215px;
+  padding: 10px;
 }
