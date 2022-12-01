@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
-  validates :phone, :firstname, presence: true
+  # validates :phone, :firstname, presence: true
 
   def badge
     Badge.where("threshold > ?", total_score).first
