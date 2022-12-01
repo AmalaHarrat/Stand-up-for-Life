@@ -1,10 +1,14 @@
 class Organisation::BookingsController < ApplicationController
 
-  def edit
-
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to @booking.mission
   end
 
-  def update
+  private
 
+  def booking_params
+    params.require(:booking).permit(:firstname, :scoring)
   end
 end
