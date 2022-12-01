@@ -1,0 +1,49 @@
+#dashboard-header {
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+}
+
+
+#infos-user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#body-dashboard{
+  width: 100%;
+}
+#gamification {
+  box-shadow: 0 0 5px 0;
+  width:50%;
+  height: 200px;
+}
+#user-progress {
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 5px 0;
+  width: 50%;
+  height: 50px;
+  margin-top: 45px;
+  margin-bottom: 15px;
+}
+
+#badges {
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: 0 0 5px 0;
+  height: 50px;
+  margin-top: 45px;
+  margin-bottom: 15px
+}
+
+#user-missions{
+  display: flex;
+  box-shadow: 0 0 5px 0;
+  width: 50%;
+}
+
+#dashboard-header  h1{
+  text-align: center;
+}

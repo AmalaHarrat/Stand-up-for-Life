@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "missions#index"
   resources :users, only: [:show]
-
+  get "dashboard", to: "dashboards#show"
   # shallow: supprime nesté si pas besoin
   resources :missions, only: [:show], shallow: true do
     resources :bookings, only: %i[show create]

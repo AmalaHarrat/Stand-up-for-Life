@@ -10,8 +10,8 @@
 <div class="container">
   <div class="col-6">
     <div class="images">
-      <% if @mission.photo.key? %>
-        <%= cl_image_tag mission.photo.key, height: 300, width: 400 %>
+      <% if @mission.photos&.first&.key? %>
+        <%= cl_image_tag @mission.photos.first.key, height: 300, width: 400 %>
       <% else %>
         <img src="<%=image_path('default.jpg')%>" alt="background">
       <% end %>
@@ -36,10 +36,17 @@
 <div class="col-6">
   <div class="participants my-5">
     <h2>Personnes inscrites:</h2>
+
     <ol>
-      <li>Emma</li>
-      <li>Alice</li>
-      <li>Paul</li>
+        <% @mission.bookings.each do |booking| %>
+        <li>
+        <p> <%= booking.user.firstname %></p>
+        <%= simple_form_for :booking, url: organisation_booking_path(booking), method: :patch do |f|%>
+          <%= f.input :score %>
+          <%= f.submit %>
+        <% end %>
+        </li>
+        <% end %>
     </ol>
   </div>
 </div>
