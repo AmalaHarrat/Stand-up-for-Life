@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
   def show
-
+    # Je veux acceder aux bookings de current user
   end
 end
 
