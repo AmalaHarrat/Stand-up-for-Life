@@ -1,38 +1,9 @@
-<div class="container my-3 mx-5">
-  <div class="col-8">
-    <div class="d-md-flex justify-content-between">
-      <div>
-        <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      </div>
-      <div>
-        <h1>Voici un récapitulatif de votre mission</h1>
-        <p><%= current_user.firstname %>, vous attend à l'adresse <%= @mission.address %> <%= @mission.city %> le <%= @mission.date %> à ??</p>
+  <div class="container">
+    <div class="row">
+        <div class="congrats">
+          <h1>Félicitation!<br>Tu es maintenant inscrit! </h1>
+          <div class="btn-donation">Je fais un don!
+          </div>
       </div>
     </div>
   </div>
-</div>
-
-<div class="container">
-  <div class="col-9">
-    <div class="images">
-    <%=image_tag('banner2.jpg')%>
-    </div>
-    <div class="mb-3">
-      <h2><%= @mission.title %></h2>
-      <small class="text-muted">Durée: <%= @mission.duration%> h • <%=@mission.city %> • <%= @mission.category %></small>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="col-10">
-    <div class="d-md-flex justify-content-between">
-      <div class="mb-3">
-        <p class="m-0"><u>Date: </u><%= @mission.date %></p>
-        <p class="m-0"><u>Heure: </u>??</p>
-        <p><u>Lieu de rendez-vous: </u><%= @mission.address %></p>
-        <p><%= @mission.description%></p>
-      </div>
-    </div>
-  </div>
-</div>
