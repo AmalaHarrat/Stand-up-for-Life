@@ -1,15 +1,8 @@
-
 <div class="container my-3 mx-5">
-  <div class="col-8">
+  <div class="col-5">
     <div class="d-md-flex justify-content-between">
-      <div>
         <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
-      </div>
-      <div class="m-3">
-        <h1>Hello, <%= current_user.firstname %></h1>
-        <h4>Voici une mission pour toi,</h4>
-      </div>
-
+      <h1><%= current_user.firstname %></h1>
     </div>
   </div>
 </div>
@@ -17,7 +10,11 @@
 <div class="container">
   <div class="col-9">
     <div class="images">
-    <%=image_tag('banner2.jpg')%>
+      <% if @mission.photo.key? %>
+        <%= cl_image_tag mission.photo.key, height: 300, width: 400 %>
+      <% else %>
+        <img src="<%=image_path('default.jpg')%>" alt="background">
+      <% end %>
     </div>
     <div class="mb-3">
       <h2><%= @mission.title %></h2>
@@ -30,9 +27,9 @@
   <div class="col-10">
     <div class="d-md-flex justify-content-between">
       <div class="mb-3">
-        <p class="m-0"><u>Date: </u><%= @mission.date %></p>
-        <p class="m-0"><u>Heure: </u>??</p>
-        <p><u>Lieu de rendez-vous: </u><%= @mission.address %></p>
+        <p class="m-0"><u>Date:</u> <%= @mission.date %></p>
+        <p class="m-0"><u>Heure:</u> ??</p>
+        <p><u>Lieu de rendez-vous:</u> <%= @mission.address %></p>
         <p><%= @mission.description%></p>
       </div>
       <div class="col-2">
