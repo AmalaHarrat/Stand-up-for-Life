@@ -7,8 +7,8 @@ class Mission < ApplicationRecord
   validates :title, :description, :category, :city, :max_participant, :duration, :date, presence: true
   validates :description, length: { minimum: 10 }
   validates :city, format: { with: /[a-zA-Z]/ }
-  validate :expiration_date_cannot_be_in_the_past
-  validate :user_an_organisation?, on: :create
+  # validate :expiration_date_cannot_be_in_the_past
+  # validate :user_an_organisation?, on: :create
 
   # Ceci est une validation custom
   # Elle permet de creer une mission QUE si organisme = true
