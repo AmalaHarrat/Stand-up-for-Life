@@ -30,7 +30,8 @@
                 <%= link_to "Gerer mes missions", organisation_missions_path, class: "dropdown-item" %>
                 <%= link_to "Créer une mission", new_organisation_mission_path, class: "dropdown-item" %>
               <% end %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete},
+              class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
