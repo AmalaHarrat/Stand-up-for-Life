@@ -42,3 +42,18 @@
     color: white;
   }
 }
+.btn-donation {
+  color: white;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  width: fit-content;
+}
+
+.btn-donation:hover {
+  opacity: 1;
+  color: #5b8570;
+}

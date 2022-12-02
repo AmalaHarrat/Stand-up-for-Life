@@ -1,25 +1,52 @@
-<div id="body">
-
-  <div id="dashboard-header">
-    <h1>Tableau de bord</h1>
-    <div id="infos-user">
-      <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
-      <p>Bonjour <%= current_user.firstname %></p>
+<div id="dashboard">
+  <div class="container my-3 mx-5">
+  <h1 class="text-center">Mon tableau de bord</h1>
+    <div class="col-5">
+      <div class="d-md-flex justify-content-around">
+          <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
+        <h2>Salut <%= current_user.firstname %> !</h2>
+      </div>
     </div>
   </div>
 
-  <div id="body-dashboard">
-    <div id="user_missions">
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-    </div>
-    <div id="gamification">
-      <div id="user-progress">
-        <p>Vous avez 20 points</p>
-      </div>
-        <div id="badges">
-          <p>Badges</p>
+  <div class="container">
+    <div class="row">
+      <div class="dashboard-body">
+        <div class="mission-table">
+        <h3>MISSIONS À VENIR:</h3>
+          <div class="card-product">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+              <h2>Product name</h2>
+              <p><%= current_user.firstname %></p>
+            </div>
+          </div>
+        <h3>MISSIONS PASSÉES:</h3>
+          <div class="card-product">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+              <h2>Product name</h2>
+              <p><%= current_user.firstname %></p>
+            </div>
+          </div>
+        </div>
+        <div class="score-table">
+        <h3 class= "text-center">MON ACTIVITÉ</h3>
+          <div id="score">
+          <em>Score:</em>
+          <p>17</p>
+          </div>
+          <div id="score-calculation">
+          <p>Continue tes efforts pour obtenir ton prochain badge !</p>
+          </div>
+          <div class="badge-table">
+          <div class="badge-img">
+          </div>
+          <div>
+          </div>
+          </div>
         </div>
       </div>
-   </div>
-
+    </div>
+  </div>
 </div>
