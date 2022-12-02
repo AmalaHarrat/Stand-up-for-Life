@@ -1,132 +1,78 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-
-  body {
-  background: #91b0a0;
-  font-family: 'karla', sans-serif;
-  color: white;
-}
-
-.page-container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  min-height: 100vh;
-  padding: 20px;
-}
-
-  .logo {
-    height: 100px;
-    width: 130px;
-    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/18041/finesse-logo-white.svg") no-repeat 0 0;
-    cursor: pointer;
+  .page_500 {
+    padding:40px 0; background:#fff; font-family: 'Arvo', serif;
+    text-align: center;
   }
 
-  .info {
-    display: flex;
-    flex-direction: row;
-    align-self: center;
-    max-width: 1200px;
-    margin-top: 100px;
+.page_500  img {
+    width:100%;
   }
 
-    @media (max-width: 700px)
-    {
-      flex-direction: column;
-      margin-top: 20px;
-    }
-
-    .cloud-image
-    {
-      flex-basis: 25%;
-
-      @media (max-width: 700px)
-      {
-        max-width: 40%;
-        align-self: center;
-      }
-
-      img
-      {
-        width: 100%;
-      }
-    }
-    .text
-    {
-      flex-basis: 70%;
-      margin-left: 50px;
-      margin-top: 70px;
-
-      @media (max-width: 700px)
-      {
-        margin-left: 0px;
-        margin-top: 20px;
-      }
-
-      h1
-      {
-        font-size: 80px;
-        margin: 0;
-        padding: 0;
-
-        @media (max-width: 900px)
-        {
-          font-size: 60px;
-        }
-
-        @media (max-width: 600px)
-        {
-          font-size: 40px;
-        }
-      }
-      h3
-      {
-        font-size: 80px;
-        line-height: 150%;
-        max-width: 600px;
-      }
-      p
-      {
-        font-size: 20px;
-        line-height: 150%;
-        max-width: 600px;
-
-        a
-        {
-          color: white;
-        }
-      }
-    }
+  .five_zero_zero_bg {
+    background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+    background-repeat: no-repeat;
+    height: 400px;
+    background-position: center;
   }
 
-}
+  .five_zero_zero_bg h1 {
+    font-size:80px;
+    text-align: center;
+  }
+
+  .five_zero_zero_bg h3 {
+		font-size:80px;
+    text-align: center;
+	}
+
+	.link_500 {
+	  color: #fff!important;
+    padding: 10px 20px;
+    background: #39ac31;
+    margin: 20px 0;
+    display: inline-block;
+  }
+
+	.contant_box_500 {
+    margin-top:-50px;
+  }
+
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="page-container">
-    <div class="logo">
-       <img scr="https://s3-us-west-2.amazonaws.com/s.cdpn.io/18041/finesse-logo-white.svg" />
+<!-- <body class="rails-default-error-page"> -->
+  <!-- This file lives in public/404.html -->
+  <!-- <div class="dialog">
+    <div>
+      <h1>The page you were looking for doesn't exist.</h1>
+      <p>You may have mistyped the address or the page may have moved.</p>
     </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div> -->
+  <section class="page_500">
+    <div class="container">
+      <div class="row">
+      <div class="col-sm-12 ">
+      <div class="col-sm-10 col-sm-offset-1  text-center">
+      <div class="five_zero_zero_bg">
+        <h1 class="text-center ">500</h1>
 
-    <div class="info">
-      <div class="cloud-image">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/18041/sad-cloud.png" />
-      </div>
-      <div class="text">
-        <h1>Quelque chose s'est un peu mal passee.</h1>
-        <h3>C'est une erreur technique (500 error).<br>
 
-        </h3>
-        <p>Nous allons regler cela maintenant, mais vous pouvez <a href="mailto:help@finesse.io">nous faire savoir ce que vous essayiez de faire</a> si vous le souhaitez.</p>
       </div>
+
+      <div class="contant_box_500">
+        <div>
+          <h1>Quelque chose s'est un peu mal passee.</h1>
+          <h3 class="h2">C'est une erreur technique (500 error).</h3>
+            <p>Nous allons regler cela maintenant, mais vous pouvez nous faire savoir ce que vous essayiez de faire si vous le souhaitez.</p>
+        </div>
     </div>
-
-  </div>
-</body>
-</html>
+  </section>
