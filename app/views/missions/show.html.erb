@@ -2,7 +2,7 @@
   <div class="col-5">
     <div class="d-md-flex justify-content-between">
       <% if @mission.photos&.first&.key? %>
-        <%= cl_image_tag @mission.photos.first.key, height: 30, width: 40%>
+        <%= cl_image_tag @mission.photos.first.key%>
       <% else %>
         <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
       <% end %>

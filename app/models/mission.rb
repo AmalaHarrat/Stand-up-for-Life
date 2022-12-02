@@ -27,4 +27,16 @@ class Mission < ApplicationRecord
   #     errors.add(:expiration_date, "Oups! la date est dans le passé...")
   #   end
   # end
+
+  def past?
+    self.date < Date.today
+  end
+
+  def progress
+    if past?
+      return :past
+    else
+      return :futur
+    end
+  end
 end
