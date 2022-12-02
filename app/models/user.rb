@@ -19,4 +19,13 @@ class User < ApplicationRecord
     # A calculer : incrementation
     100
   end
+
+  def past_missions
+    self.bookings.map(&:mission).select(&:past?)
+    # self.bookings.map{|booking| booking.mission}.select{ |mission| mission.past?}
+  end
+
+  def futur_missions
+    self.bookings.map(&:mission).reject(&:past?)
+  end
 end
