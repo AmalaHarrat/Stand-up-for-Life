@@ -98,6 +98,14 @@ a {
     margin-top: 8px;
   }
 
+  .card-product small {
+    font-size: 10px;
+    line-height: 1.4;
+    opacity: .4;
+    margin-bottom: 0;
+  }
+
   .card-product .card-product-infos {
     padding: 16px;
+    padding-bottom: 0px;
   }
