@@ -28,13 +28,13 @@ class Mission < ApplicationRecord
   #   end
   # end
 
-  def passed?
+  def past?
     self.date < Date.today
   end
 
   def progress
-    if passed?
-      return :passed
+    if past?
+      return :past
     else
       return :futur
     end

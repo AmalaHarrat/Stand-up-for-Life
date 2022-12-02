@@ -8,21 +8,22 @@
       </div>
     </div>
   </div>
-
   <div class="container">
     <div class="row">
       <div class="dashboard-body">
         <div class="mission-table">
           <h3>MISSIONS À VENIR:</h3>
+          <% current_user.futur_missions.each do |mission| %>
           <div class="card-product">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
             <div class="card-product-infos">
-              <h2>Product name</h2>
+              <h2><%= mission.category %></h2>
               <%=  %>
               <p><%= current_user.firstname %></p>
               <small>Pour annuler votre présence, merci de contacter directement l'organisme</small>
             </div>
           </div>
+          <% end %>
         <h3>MISSIONS PASSÉES:</h3>
           <div class="card-product opacity-50">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
