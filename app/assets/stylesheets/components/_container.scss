@@ -1,4 +1,4 @@
-.container_index {
+.container-index {
   max-height: 340px;
   top: 20px;
   left: 0;
@@ -8,7 +8,7 @@
 
 // body { font: 400 1em/1.5 "Neuton"; background: #090d00; color: rgba(255,255,255,.25); text-align: center; margin: 0 }
 
-h1 {
+.container-index h1 {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: .5em;
@@ -24,18 +24,19 @@ h1 {
 
   span {
 
-    font: 700 4em/1 "Oswald", sans-serif;
+    font: 700 88px/1 "Oswald", sans-serif;
     letter-spacing: 0;
     padding: .25em 0 .325em;
     display: block;
     margin: 0 auto;
     text-shadow: 0 0 80px rgba(255,255,255,.5);
+    // justify-content: center;
 
 /* Clip Background Image */
 
-    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+    // background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
     -webkit-background-clip: text;
-    background-clip: text;
+    // background-clip: text;
 
 /* Animate Background Image */
 
@@ -44,8 +45,8 @@ h1 {
 
 /* Activate hardware acceleration for smoother animations */
 
-    -webkit-transform: translate3d(0,0,0);
-    -webkit-backface-visibility: hidden;
+    // -webkit-transform: translate3d(0,0,0);
+    // -webkit-backface-visibility: hidden;
 
   }
 }
