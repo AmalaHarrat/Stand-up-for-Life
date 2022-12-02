@@ -1,7 +1,7 @@
 class DashboardsController < ApplicationController
   def show
     # Je veux acceder aux missions bookée par current user
-  @mission = @booking.mission
+    @missions = Mission.all
   end
 end
 
