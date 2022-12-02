@@ -1,7 +1,11 @@
 <div class="container my-3 mx-5">
   <div class="col-5">
     <div class="d-md-flex justify-content-between">
-        <%= cl_image_tag current_user.photo.key, class: "avatar_show" %>
+      <% if @mission.photos&.first&.key? %>
+        <%= cl_image_tag @mission.photos.first.key, height: 30, width: 40%>
+      <% else %>
+        <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
+      <% end %>
       <h1><%= current_user.firstname %></h1>
     </div>
   </div>
