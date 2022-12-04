@@ -12,7 +12,11 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item name">
+          <%if current_user.organisme == false %>
             <em><%= link_to current_user.firstname, dashboard_path , class: "nav-link" %></em>
+            <% else %>
+            <em><%= link_to current_user.firstname, organisation_missions_path , class: "nav-link" %></em>
+            <% end %>
           </li>
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
