@@ -7,6 +7,9 @@ class Mission < ApplicationRecord
   validates :title, :description, :category, :city, :max_participant, :duration, :date, presence: true
   validates :description, length: { minimum: 3 }
   validates :city, format: { with: /[a-zA-Z]/ }
+
+  geocoded_by :city
+  after_validation :geocode, if: :will_save_change_to_address?
   # validate :expiration_date_cannot_be_in_the_past
   # validate :user_an_organisation?, on: :create
 
