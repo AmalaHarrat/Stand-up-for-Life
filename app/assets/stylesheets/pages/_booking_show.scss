@@ -1,4 +1,4 @@
-.container {
+.container-booking-show {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,12 +18,12 @@
   padding: 30px;
 }
 
-h1 {
+.congrats h1 {
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.22);
   color:white;
 }
 
-p{
+.congrats p {
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.22);
   color:white;
   margin-top: 35px;

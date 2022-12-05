@@ -1,0 +1,16 @@
+.form-control {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 168px 96px 168px;
+  -webkit-box-align: center;
+  align-items: center;
+  place-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(0 0 0 / 16%) 0px 1pt 4pt, rgb(0 0 0 / 8%) 0px 2pt 8pt;
+  padding: 8px 0px 8px 8px;
+  border-radius: 16px;
+  height: 56px;
+  position: relative;
+
+}
