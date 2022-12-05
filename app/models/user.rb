@@ -10,14 +10,22 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   validates :firstname, presence: true
+  validates :firstname, uniqueness: true
 
   def badge
     Badge.where("threshold > ?", total_score).first
   end
 
   def total_score
-    # A calculer : incrementation
-    100
+    # METHODE CLASSIQUE
+    # self.bookings.map do |booking|
+    #   booking.scoring
+    # end.sum
+    # METHODE SIMPLIFIEE
+    self.bookings.map(&:scoring).reject(&:nil?).sum.to_i
+    # METHODE SIMPLIFIEE ++
+    # self.bookings.map(&:scoring).compact.sum.to_i
+
   end
 
   def past_missions

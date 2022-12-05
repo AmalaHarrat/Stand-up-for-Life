@@ -21,15 +21,15 @@
           <% end %>
           <% current_user.futur_missions.each do |mission| %>
           <div class="card-product">
-            <% if mission.photos&.first&.key? %>
-              <%= cl_image_tag mission.photos.first.key, height: 300, width: 400 %>
+            <% if current_user.photo&.first&.key? %>
+              <%= cl_image_tag current_user.photo.first.key, height: 300, width: 400 %>
             <% else %>
               <img src="<%=image_path('default.jpg')%>" alt="background">
             <% end %>
             <div class="card-product-infos">
-              <h2><%= mission.title %></h2>
+              <h2><%= mission.title.capitalize %></h2>
               <p><u>Date:</u> <%=mission.date %></p>
-              <p><u>Heure:</u> ??</p>
+              <p><u>Heure:</u> <%= mission.hour %></p>
               <p><u>Lieu de rendez-vous:</u> <%= mission.address%></p>
               <small>Pour annuler votre présence, merci de contacter directement l'organisme</small>
             </div>
@@ -47,9 +47,9 @@
               <img src="<%=image_path('default.jpg')%>" alt="background">
             <% end %>
             <div class="card-product-infos">
-              <h2><%= mission.title %></h2>
+              <h2><%= mission.title.capitalize %></h2>
               <p><u>Date:</u> <%=mission.date %></p>
-              <p><u>Heure du rendez-vous:</u> <%= mission.hour %> : 00</p>
+              <p><u>Heure du rendez-vous:</u> <%= mission.hour %></p>
               <p><u>Lieu de rendez-vous:</u> <%= mission.address%></p>
               <small>Pour annuler votre présence, merci de contacter directement l'organisme</small>
             </div>
@@ -60,7 +60,7 @@
           <h3 class= "text-center">MON ACTIVITÉ</h3>
           <div id="score">
             <em>Score:</em>
-            <p>50</p>
+            <p><%= current_user.total_score %></p>
           </div>
           <div id="score-calculation">
             <p>Bravo <%= current_user.firstname %>, <br> Continue à être engagé(e) pour obtenir ton prochain badge !</p>
