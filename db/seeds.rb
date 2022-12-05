@@ -30,13 +30,13 @@ Mission.create(user: saliha, title: "Maraude dans Bordeaux", description: "Nous 
 Mission.create(user: saliha, title: "Tournois de football caritatif", description: "Bienvenue dans notre projet de solidarité international, qui sera pour le Togo ! Venez participer à notre tournois de foot qui permttra de recolletter des fonds pour construire un puis au Togo" , category: "humanitaire 🙏🏻", address: "Complexe Ginga foot" , city: "Merignac" , date: "17/01/2023" , hour: 15, duration: 5, max_participant: 15 )
 
 puts "BOOKING CREATION"
-Booking.create(user: alice, mission: Mission.first)
+Booking.create(user: alice, mission: Mission.first, scoring: 80)
 Booking.create(user: alice, mission: Mission.second)
 
 puts "BADGES CREATION"
 # Attention le seuil est celui des badges pas des scores
 puts "1st badge"
-file = URI.open("https://img.freepik.com/vecteurs-libre/couronne-laurier-dore-isole-fond-blanc_1441-3287.jpg?w=1380&t=st=1670262108~exp=1670262708~hmac=54875e4f55a141067d3c4a1ab1ed4f6bc7d8bc48d8282d15a1b991fd02e7e76d")
+file = URI.open("https://i.ibb.co/Bgz7ZNp/first.png")
 first_badge = Badge.new(name: "1st mission", threshold: 100)
 first_badge.photo.attach(io: file, filename: "firstbadge.jpg", content_type: "image/jpg")
 first_badge.save
