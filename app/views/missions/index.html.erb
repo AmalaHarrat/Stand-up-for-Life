@@ -1,19 +1,18 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=image_path('banner.jpg')%>);">
   <div class="container-index">
-    <div class="container-form">
-  <%= form_with url: organisation_missions_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control-city"
-    placeholder: "Séléctionne ta ville"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-    </div>
+
     <%# <h1>StandUpForLife </h1>  %>
     <h1><span> Stand Up For LIFE </h1></span>
     <%# <div> %>
     <p> "Il ne peut y avoir de plus grand don que celui de donner son temps et son énergie pour aider les autres sans rien attendre en retour" <small> <em>Nelson Mandela</em> </small>
+    <div class="container-form">
+      <%= simple_form_for(:search, url: root_path, html: { method: :get }) do |f| %>
+        <%= f.input :city, :label => "Ville" %>
+        <%= f.input :category,:label => "Catégorie", as: :select, collection: ["humanitaire 🙏🏻", "environnement 🌱", "animaux 🐶"]  %>
+        <%= f.input :date, as: :date, html5: true %>
+        <%= f.submit "Rechercher"%>
+      <% end %>
+    </div>
   <%# <%= link_to " ⏎ Back", root_path, class: "btn btn-ghost-white", style: "color: white; border: 1px solid white;" %>
   </div>
 </div>
