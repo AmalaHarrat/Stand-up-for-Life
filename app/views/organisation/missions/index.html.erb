@@ -12,7 +12,7 @@
             <img src="<%=image_path('default.jpg')%>" alt="background">
           <% end %>
           <div class="card-mission-infos">
-            <h3><%= mission.title %></h3>
+            <h3><%= mission.title.capitalize %></h3>
             <div class="mb-3">
               <small class="text-muted"> Durée: <%= mission.duration %> h • <%= mission.category %></small>
             </div>
@@ -21,7 +21,7 @@
                   <p class="small"><u> Date: </u><%= mission.date %></p>
                   <p class="small"><u> Heure: </u><%= mission.hour %></p>
                 </div>
-                <small class="card-mission-location"> 📍 <%=mission.city%></small>
+                <small class="card-mission-location"> 📍 <%=mission.city.capitalize%></small>
               </div>
             <p><%= truncate(mission.description, :length => 100)%></p>
           </div>
