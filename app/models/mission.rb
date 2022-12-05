@@ -8,8 +8,12 @@ class Mission < ApplicationRecord
   validates :description, length: { minimum: 3 }
   validates :city, format: { with: /[a-zA-Z]/ }
 
-  geocoded_by :city
+  geocoded_by :address_from_components
   after_validation :geocode, if: :will_save_change_to_address?
+
+  def address_from_components
+    "#{self.address}, #{self.city}"
+  end
   # validate :expiration_date_cannot_be_in_the_past
   # validate :user_an_organisation?, on: :create
 

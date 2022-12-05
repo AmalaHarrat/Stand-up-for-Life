@@ -3,13 +3,7 @@ class MissionsController < ApplicationController
 
   def index
     @missions = Mission.all
-<<<<<<< HEAD
-    @markers = @missions.geocoded.map do |mission|
-      {
-        lat: mission.latitude,
-        lng: mission.longitude
-      }
-=======
+
     if params.dig(:search, :city).present?
       @missions = @missions.where("city ILIKE ?", "%#{params[:search][:city]}%")
     end
@@ -18,7 +12,13 @@ class MissionsController < ApplicationController
     end
     if params.dig(:search, :date).present?
       @missions = @missions.where(date: params[:search][:date].to_date)
->>>>>>> master
+    end
+    @markers = @missions.geocoded.map do |mission|
+      {
+        lat: mission.latitude,
+        lng: mission.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {mission: mission})
+      }
     end
   end
 
