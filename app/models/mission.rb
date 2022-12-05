@@ -5,7 +5,7 @@ class Mission < ApplicationRecord
   has_many_attached :photos
 
   validates :title, :description, :category, :city, :max_participant, :duration, :date, presence: true
-  validates :description, length: { minimum: 10 }
+  validates :description, length: { minimum: 3 }
   validates :city, format: { with: /[a-zA-Z]/ }
   # validate :expiration_date_cannot_be_in_the_past
   # validate :user_an_organisation?, on: :create
@@ -27,4 +27,16 @@ class Mission < ApplicationRecord
   #     errors.add(:expiration_date, "Oups! la date est dans le passé...")
   #   end
   # end
+
+  def past?
+    self.date < Date.today
+  end
+
+  def progress
+    if past?
+      return :past
+    else
+      return :futur
+    end
+  end
 end

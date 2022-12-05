@@ -1,35 +1,60 @@
+<% if current_user.organisme == false %>
 <div id="dashboard">
   <div class="container my-3 mx-5">
-  <h1 class="text-center">MON TABLEAU DE BORD</h1>
+    <h1 class="text-center">MON TABLEAU DE BORD</h1>
     <div class="col-5">
       <div class="d-md-flex justify-content-around">
-          <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
+        <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
         <h2>Salut <%= current_user.firstname %> !</h2>
       </div>
     </div>
   </div>
-
   <div class="container">
     <div class="row">
       <div class="dashboard-body">
         <div class="mission-table">
-        <h3>MISSIONS À VENIR:</h3>
+          <% if current_user.futur_missions.first == nil %>
+            <h3>MISSIONS À VENIR:</h3>
+            <small class="text-muted font-weight-light">Aucune mission à venir</small>
+            <% else %>
+            <h3>MISSIONS À VENIR:</h3>
+          <% end %>
+          <% current_user.futur_missions.each do |mission| %>
           <div class="card-product">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <% if mission.photos&.first&.key? %>
+              <%= cl_image_tag mission.photos.first.key, height: 300, width: 400 %>
+            <% else %>
+              <img src="<%=image_path('default.jpg')%>" alt="background">
+            <% end %>
             <div class="card-product-infos">
-              <h2>Product name</h2>
-              <p><%= current_user.firstname %></p>
+              <h2><%= mission.title %></h2>
+              <p><u>Date:</u> <%=mission.date %></p>
+              <p><u>Heure:</u> ??</p>
+              <p><u>Lieu de rendez-vous:</u> <%= mission.address%></p>
               <small>Pour annuler votre présence, merci de contacter directement l'organisme</small>
             </div>
           </div>
-        <h3>MISSIONS PASSÉES:</h3>
+          <% end %>
+          <% if current_user.past_missions.first == nil%>
+            <% else %>
+            <h3>MISSIONS PASSÉE:</h3>
+          <% end %>
+          <% current_user.past_missions.each do |mission| %>
           <div class="card-product opacity-50">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <% if mission.photos&.first&.key? %>
+              <%= cl_image_tag mission.photos.first.key, height: 300, width: 400 %>
+            <% else %>
+              <img src="<%=image_path('default.jpg')%>" alt="background">
+            <% end %>
             <div class="card-product-infos">
-              <h2>Product name</h2>
-              <p><%= current_user.firstname %></p>
+              <h2><%= mission.title %></h2>
+              <p><u>Date:</u> <%=mission.date %></p>
+              <p><u>Heure du rendez-vous:</u> <%= mission.hour %> : 00</p>
+              <p><u>Lieu de rendez-vous:</u> <%= mission.address%></p>
+              <small>Pour annuler votre présence, merci de contacter directement l'organisme</small>
             </div>
           </div>
+          <% end %>
         </div>
         <div class="score-table">
         <h3 class= "text-center">MON ACTIVITÉ</h3>
@@ -43,7 +68,6 @@
           <div class="badge-table">
           <div class="badge-img">
           </div>
-          <div>
           </div>
           </div>
         </div>
@@ -51,3 +75,4 @@
     </div>
   </div>
 </div>
+<% end %>
