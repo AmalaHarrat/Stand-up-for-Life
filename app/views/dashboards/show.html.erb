@@ -27,9 +27,9 @@
               <img src="<%=image_path('default.jpg')%>" alt="background">
             <% end %>
             <div class="card-product-infos">
-              <h2><%= mission.title %></h2>
+              <h2><%= mission.title.capitalize %></h2>
               <p><u>Date:</u> <%=mission.date %></p>
-              <p><u>Heure:</u> ??</p>
+              <p><u>Heure:</u><%=mission.hour %></p>
               <p><u>Lieu de rendez-vous:</u> <%= mission.address%></p>
               <small>Pour annuler votre présence, merci de contacter directement l'organisme</small>
             </div>

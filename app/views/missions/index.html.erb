@@ -29,7 +29,7 @@
                   <img src="<%=image_path('default.jpg')%>" alt="background">
                 <% end %>
               <div class="card-mission-infos">
-                <h3><%= mission.title %></h3>
+                <h3><%= mission.title.capitalize %></h3>
                   <div class="mb-3">
                   <small class="text-muted"> Durée: <%= mission.duration %> h • <%= mission.category.capitalize %></small>
                   </div>
