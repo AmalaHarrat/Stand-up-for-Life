@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
 
 puts "Cleaning database..."
 Badge.destroy_all
@@ -33,6 +34,23 @@ Booking.create(user: alice, mission: Mission.first)
 Booking.create(user: alice, mission: Mission.second)
 
 puts "BADGES CREATION"
-Badge.create(name: "1st mission", threshold: 100)
-Badge.create(name: "baby helper", threshold: 200)
+# Attention le seuil est celui des badges pas des scores
+puts "1st badge"
+file = URI.open("https://img.freepik.com/vecteurs-libre/couronne-laurier-dore-isole-fond-blanc_1441-3287.jpg?w=1380&t=st=1670262108~exp=1670262708~hmac=54875e4f55a141067d3c4a1ab1ed4f6bc7d8bc48d8282d15a1b991fd02e7e76d")
+first_badge = Badge.new(name: "1st mission", threshold: 100)
+first_badge.photo.attach(io: file, filename: "firstbadge.jpg", content_type: "image/jpg")
+first_badge.save
+
+puts "baby helper badge"
+file = URI.open("https://static9.depositphotos.com/1229718/1127/i/950/depositphotos_11274573-stock-photo-police-badge.jpg")
+babyhelper_badge = Badge.new(name: "Baby helper", threshold: 200)
+babyhelper_badge.photo.attach(io: file, filename: "babyhelper.jpg", content_type: "image/jpg")
+babyhelper_badge.save
+
+# puts "junior helper badge"
+# file = URI.open("https://static9.depositphotos.com/1229718/1127/i/950/depositphotos_11274573-stock-photo-police-badge.jpg")
+# juniorhelper_badge = Badge.new(name: "Baby helper", threshold: 300)
+# juniorhelper_badge.photo.attach(io: file, filename: "juniorhelper.jpg", content_type: "image/jpg")
+# juniorhelper_badge.save
+
 puts "finish"

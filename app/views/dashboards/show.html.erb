@@ -29,11 +29,7 @@
             <div class="card-product-infos">
               <h2><%= mission.title.capitalize %></h2>
               <p><u>Date:</u> <%=mission.date %></p>
-<<<<<<< HEAD
               <p><u>Heure:</u><%=mission.hour %></p>
-=======
-              <p><u>Heure:</u> <%= mission.hour %></p>
->>>>>>> master
               <p><u>Lieu de rendez-vous:</u> <%= mission.address%></p>
               <small>Pour annuler votre présence, merci de contacter directement l'organisme</small>
             </div>
@@ -70,8 +66,13 @@
             <p>Bravo <%= current_user.firstname %>, <br> Continue à être engagé(e) pour obtenir ton prochain badge !</p>
           </div>
           <div class="badge-table">
-            <div class="badge-img">
+          <% if current_user.total_score > 1%>
+            <div class="badge">
+            <%=render "shared/badges"%>
             </div>
+          <% else %>
+          <small class="text-muted font-weight-light">Vous n'avez pas encore de badge! <br> Réalisez votre première mission pour obtenir votre 1er badge 😍</small>
+          <% end %>
           </div>
         </div>
         </div>
