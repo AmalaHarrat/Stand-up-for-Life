@@ -23,35 +23,34 @@
 <div>
   <div class="body-index">
     <div class="cards-mission col-md-7">
-        <% @missions.each do |mission| %>
-          <div class="zoom">
-            <%= link_to mission_path(mission) do %>
-              <div class="card-mission m-3 ">
-                <% if mission.photos&.first&.key? %>
-                  <%= cl_image_tag mission.photos.first.key, height: 300, width: 400 %>
-                  <% else %>
-                    <img src="<%=image_path('default.jpg')%>" alt="background">
-                  <% end %>
-                <div class="card-mission-infos">
-                  <h3><%= mission.title %></h3>
-                    <div class="mb-3">
-                    <small class="text-muted"> Durée: <%= mission.duration %> h • <%= mission.category.capitalize %></small>
-                    </div>
-                  <div class="card-mission-infos-location">
-                    <div>
-                      <p class="small"><u> Date: </u><%= mission.date %></p>
-                      <p class="small"><u> Heure: </u><%= mission.hour %></p>
-                    </div>
-                    <small class="card-mission-location"> 📍 <%=mission.city.capitalize%></small>
-                  </div>
-                    <p><%= truncate(mission.description, :length => 100)%></p>
-                  </div>
+      <% @missions.each do |mission| %>
+        <div class="zoom">
+          <%= link_to mission_path(mission) do %>
+            <div class="card-mission m-3 ">
+              <% if mission.photos&.first&.key? %>
+                <%= cl_image_tag mission.photos.first.key, height: 300, width: 400 %>
+              <% else %>
+                <img src="<%=image_path('default.jpg')%>" alt="background">
+              <% end %>
+              <div class="card-mission-infos">
+                <h3><%= mission.title %></h3>
+                <div class="mb-3">
+                  <small class="text-muted"> Durée: <%= mission.duration %> h • <%= mission.category.capitalize %></small>
                 </div>
+                <div class="card-mission-infos-location">
+                  <div>
+                    <p class="small"><u> Date: </u><%= mission.date %></p>
+                    <p class="small"><u> Heure: </u><%= mission.hour %></p>
+                  </div>
+                  <small class="card-mission-location"> 📍 <%=mission.city.capitalize%></small>
+                </div>
+                  <p><%= truncate(mission.description, :length => 100)%></p>
+                </div>
+              </div>
           <% end %>
-            </div>
-        <% end %>
+        </div>
+      <% end %>
     </div>
-
     <div class="geo sticky-top"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
