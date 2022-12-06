@@ -30,13 +30,13 @@ Mission.create(user: saliha, title: "Maraude dans Bordeaux", description: "Nous 
 Mission.create(user: saliha, title: "Tournois de football caritatif", description: "Bienvenue dans notre projet de solidarité international, qui sera pour le Togo ! Venez participer à notre tournois de foot qui permttra de recolletter des fonds pour construire un puis au Togo" , category: "humanitaire 🙏🏻", address: "Complexe Ginga foot" , city: "Merignac" , date: "17/01/2023" , hour: 15, duration: 5, max_participant: 15 )
 
 puts "BOOKING CREATION"
-Booking.create(user: alice, mission: Mission.first, scoring: 80)
+Booking.create(user: alice, mission: Mission.first)
 Booking.create(user: alice, mission: Mission.second)
 
 puts "BADGES CREATION"
 # Attention le seuil est celui des badges pas des scores
 puts "1st badge"
-file = URI.open("https://i.ibb.co/Bgz7ZNp/first.png")
+file = URI.open("https://raw.githubusercontent.com/amalharrat/Stand-up-for-Life/master/app/assets/images/first.png")
 first_badge = Badge.new(name: "1st mission", threshold: 100)
 first_badge.photo.attach(io: file, filename: "firstbadge.jpg", content_type: "image/jpg")
 first_badge.save

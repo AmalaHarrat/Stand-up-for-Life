@@ -59,19 +59,22 @@
         <div class="score-table">
           <h3 class= "text-center">MON ACTIVITÉ</h3>
           <div id="score">
-            <em>Score:</em>
+            <em>Mon score actuel:</em>
             <p><%= current_user.total_score %></p>
           </div>
           <div id="score-calculation">
-            <p>Bravo <%= current_user.firstname %>, <br> Continue à être engagé(e) pour obtenir ton prochain badge !</p>
+          <% if current_user.total_score > 1%>
+            <p>Bravo <%= current_user.firstname %>, <br> Continue ton engagement! Plus que <em><%= 100 - (current_user.total_score) %> points </em>avant ton prochain badge !</p>
+          <% end %>
           </div>
           <div class="badge-table">
           <% if current_user.total_score > 1%>
-            <div class="badge">
+            <div class="badge" data-controller="badge" data-badge-target="badge" data-action="mousemove->badge#mousemove">
             <%=render "shared/badges"%>
             </div>
           <% else %>
-          <small class="text-muted font-weight-light">Vous n'avez pas encore de badge! <br> Réalisez votre première mission pour obtenir votre 1er badge 😍</small>
+          <h4>Tu n'as pas encore de badge!</h4>
+          <p>Réalise ta première mission pour obtenir ton 1er badge 😍</p>
           <% end %>
           </div>
         </div>
