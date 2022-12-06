@@ -11,7 +11,7 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :organisme , :as => :radio_buttons, collection: [["Je suis un organisme", true]], :label => " " %>
+            <%= f.input :organisme , :as => :radio_buttons, collection: [["Je suis un organisme", true], ["Je suis un bénévole",false]], :label => " " %>
             <%= f.input :firstname,
                         required: true,
                         autofocus: true,
