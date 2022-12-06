@@ -40,6 +40,23 @@
   width: 100%;
   position: absolute;
   bottom: 0px;
+
+  h4{
+    position: relative;
+    text-align: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    top: 115px;
+  }
+  p{
+    position: relative;
+    text-align: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    top: 115px;
+  }
 }
 
 // TEXT:
@@ -59,7 +76,7 @@
   margin-top: 10px;
 }
 
-// BADGES
+// SCORES
 
 #score{
   border-radius: 20px;
@@ -75,6 +92,7 @@
   top: 50px;
   left: 20px;
   padding: 10px;
+  margin-top: 15px;
 
     p{
       color: #91b0a0;
@@ -93,21 +111,12 @@
     }
 }
 
-#score-calculation p {
+#score-calculation {
+
+  p {
   position: absolute;
-  top: 320px;
+  top: 310px;
   padding-left: 25px;
   color: white;
+  }
 }
-
-// .badge-img img{
-//   border-radius: 50%;
-//   background-size: cover;
-//   box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.3);
-//   width: 200px;
-//   height: 200px;
-//   position: absolute;
-//   top: 40px;
-//   left: 215px;
-//   padding: 10px;
-// }
