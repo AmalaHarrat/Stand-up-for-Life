@@ -21,8 +21,8 @@
           <% end %>
           <% current_user.futur_missions.each do |mission| %>
           <div class="card-product">
-            <% if current_user.photo&.first&.key? %>
-              <%= cl_image_tag current_user.photo.first.key, height: 300, width: 400 %>
+            <% if current_user.photo.key? %>
+              <%= cl_image_tag current_user.photo.key, height: 300, width: 400 %>
             <% else %>
               <img src="<%=image_path('default.jpg')%>" alt="background">
             <% end %>

@@ -1,8 +1,8 @@
 <div class="container my-3 mx-5">
   <div class="col-5">
     <div class="d-md-flex justify-content-between">
-      <% if current_user.photo&.first&.key? %>
-        <%= cl_image_tag current_user.photo.first.key, height: 30, width: 40%>
+      <% if current_user.photo.key? %>
+        <%= cl_image_tag current_user.photo.key, height: 70, width: 70%>
       <% else %>
         <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
       <% end %>
