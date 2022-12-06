@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import MapController from "./map_controller"
+application.register("map", MapController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
@@ -32,3 +35,4 @@ el.addEventListener("mousemove", (e) => {
   document.documentElement.style.setProperty("--r-x", rX + "deg");
   document.documentElement.style.setProperty("--r-y", rY + "deg");
 });
+

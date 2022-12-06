@@ -6,7 +6,7 @@
 }
 
 .card-mission > img {
-  height: 200px;
+  height: 250px;
   width: 100%;
   object-fit: cover;
   object-position: center;
@@ -48,7 +48,7 @@
 
 .cards-mission {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
 }
 
