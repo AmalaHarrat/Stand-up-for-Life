@@ -25,9 +25,9 @@
         <i class="fa-solid fa-pen"></i>
         <i class="fa-solid fa-trash"></i>
       </div>
-      <h2><%= @mission.title %></h2>
-      <small class="text-muted">Durée: <%= @mission.duration%> h • <%=@mission.city %> • <%= @mission.category %></small>
-        </div>
+      <h2><%= @mission.title.capitalize %></h2>
+      <small class="text-muted">Durée: <%= @mission.duration%> h • <%=@mission.city.capitalize%> • <%=@mission.category %></small>
+    </div>
   </div>
 </div>
 
@@ -35,8 +35,8 @@
   <div class="col-9">
       <div class="mb-3">
         <p class="m-0"><u>Date: </u><%= @mission.date %></p>
-        <p><u>Heure</u> <%= @mission.hour %> : 00</p>
-        <p><u>Lieu de rendez-vous: </u><%= @mission.address %></p>
+        <p><u>Heure</u> <%= @mission.hour %> </p>
+        <p><u>Lieu de rendez-vous: </u><%= @mission.address.capitalize %></p>
         <p><%= @mission.description%></p>
       </div>
   </div>

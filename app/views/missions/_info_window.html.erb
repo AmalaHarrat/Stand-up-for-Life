@@ -1,0 +1,8 @@
+<div class="card-mission-infos">
+  <h6><%= mission.title %></h6>
+  <small class="text-muted"> Durée: <%= mission.duration %> h • <%= mission.category.capitalize %></small>
+  <div class="card-mission-infos-location">
+      <p class="small"><u> Date: </u><%= mission.date %></p>
+      <p class="small"><u> Heure: </u><%= mission.hour %></p>
+      <small class="card-mission-location"> 📍 <%=mission.city.capitalize%></small>
+  </div>

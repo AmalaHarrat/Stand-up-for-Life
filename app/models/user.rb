@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :missions
   has_many :bookings
+  # has_one :badge
 
   has_one_attached :photo
 
