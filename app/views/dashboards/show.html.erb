@@ -3,8 +3,13 @@
   <div class="container my-3 mx-5">
     <h1 class="text-center">MON TABLEAU DE BORD</h1>
     <div class="col-5">
-      <div class="d-md-flex justify-content-around">
-        <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
+      <div class="">
+        <p>Salut <%= current_user.firstname %> !</p>
+        <% if current_user.photo.key? %>
+          <%= cl_image_tag current_user.photo.key, height: 70, width: 70 %>
+        <% else %>
+          <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
+        <% end %>
         <h2>Salut <%= current_user.firstname %> !</h2>
       </div>
     </div>
