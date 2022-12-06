@@ -2,11 +2,10 @@
 <div id="dashboard">
   <div class="container my-3 mx-5">
     <h1 class="text-center">MON TABLEAU DE BORD</h1>
-    <div class="col-5">
-      <div class="">
-        <p>Salut <%= current_user.firstname %> !</p>
+    <div class="col-4">
+      <div class="d-md-flex justify-content-evenly">
         <% if current_user.photo.key? %>
-          <%= cl_image_tag current_user.photo.key, height: 70, width: 70 %>
+          <%= cl_image_tag current_user.photo.key, class: "avatar-show" %>
         <% else %>
           <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
         <% end %>
@@ -67,11 +66,20 @@
             <em>Mon score actuel:</em>
             <p><%= current_user.total_score %></p>
           </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success progress-bar-animated"
+              role="progressbar"
+              aria-valuenow=<% current_user.total_score %> aria-valuemin="0" aria-valuemax="100"
+              style="width: <% current_user.total_score %>%;">
+                <%= number_to_percentage(current_user.total_score, precision: 0) %>
+            </div>
+          </div>
           <div id="score-calculation">
           <% if current_user.total_score > 1%>
             <p>Bravo <%= current_user.firstname %>, <br> Continue ton engagement! Plus que <em><%= 100 - (current_user.total_score) %> points </em>avant ton prochain badge !</p>
           <% end %>
           </div>
+
           <div class="badge-table">
           <% if current_user.total_score > 1%>
             <div class="badge" data-controller="badge" data-badge-target="badge" data-action="mousemove->badge#mousemove">
