@@ -23,14 +23,15 @@ class Organisation::MissionsController < ApplicationController
     end
   end
 
-   def edit
-   @mission = Mission.find(params[:id])
-   end
+  def edit
+    @mission = Mission.find(params[:id])
+  end
 
-   def update
+  def update
     @mission = Mission.find(params[:id])
     @mission = Mission.update(mission_params)
-   end
+    redirect_to organisation_mission_path(@mission)
+  end
 
   private
 

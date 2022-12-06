@@ -25,6 +25,7 @@
         <i class="fa-solid fa-pen"></i>
         <i class="fa-solid fa-trash"></i>
       </div>
+      <%= link_to "edite ta mission", edit_organisation_mission_path(@mission), class:"btn btn-devise"%>
       <h2><%= @mission.title.capitalize %></h2>
       <small class="text-muted">Durée: <%= @mission.duration%> h • <%=@mission.city.capitalize%> • <%=@mission.category %></small>
     </div>

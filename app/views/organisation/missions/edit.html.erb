@@ -11,11 +11,11 @@
           <%= f.input :address, :label => "Lieu du rendez-vous" %>
           <%= f.input :city, :label => "Ville" %>
           <%= f.input :date, html5: true %>
-          <%= f.input :hour, as: :time, html5: true, :label => "Heure du rendez-vous"%>
+          <%= f.input :hour, html5: true, :label => "Heure du rendez-vous"%>
           <%= f.input :duration,:label => "Durée de la mission"  %>
           <%= f.input :max_participant, :label => "Nombre de participant maximum" %>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-          <%= f.submit "J'ajoute cette mission", class: "btn btn-ghost-white mb-3"%>
+          <%= f.submit  "J'actualise cette mission", class: "btn btn-devise mb-3"%>
         <% end %>
       </div>
   </div>
