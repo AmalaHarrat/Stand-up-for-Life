@@ -20,6 +20,22 @@
   </div>
 </div>
 
+
+<div class="container">
+  <div class="cards-mission">
+      <% @missions.each do |mission| %>
+        <div class="zoom">
+          <%= link_to mission_path(mission) do %>
+            <div class="card-mission m-3 ">
+              <% if mission.photos&.first&.key? %>
+                <%= cl_image_tag mission.photos.first.key, height: 300, width: 400 %>
+                <% else %>
+                  <img src="<%=image_path('default.jpg')%>" alt="background">
+                <% end %>
+              <div class="card-mission-infos">
+                <h3><%= mission.title.capitalize %></h3>
+                  <div class="mb-3">
+                  <small class="text-muted"> Durée: <%= mission.duration %> h • <%= mission.category.capitalize %></small>
 <div>
   <div class="body-index">
     <div class="cards-mission col-md-7">

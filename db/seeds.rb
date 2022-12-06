@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
 
 puts "Cleaning database..."
 Badge.destroy_all
@@ -29,10 +30,27 @@ Mission.create(user: saliha, title: "Maraude dans Bordeaux", description: "Nous 
 Mission.create(user: saliha, title: "Tournois de football caritatif", description: "Bienvenue dans notre projet de solidarité international, qui sera pour le Togo ! Venez participer à notre tournois de foot qui permttra de recolletter des fonds pour construire un puis au Togo" , category: "humanitaire 🙏🏻", address: "Complexe Ginga foot" , city: "Merignac" , date: "17/01/2023" , hour: 15, duration: 5, max_participant: 15 )
 
 puts "BOOKING CREATION"
-Booking.create(user: alice, mission: Mission.first)
+Booking.create(user: alice, mission: Mission.first, scoring: 80)
 Booking.create(user: alice, mission: Mission.second)
 
 puts "BADGES CREATION"
-Badge.create(name: "1st mission", threshold: 100)
-Badge.create(name: "baby helper", threshold: 200)
+# Attention le seuil est celui des badges pas des scores
+puts "1st badge"
+file = URI.open("https://i.ibb.co/Bgz7ZNp/first.png")
+first_badge = Badge.new(name: "1st mission", threshold: 100)
+first_badge.photo.attach(io: file, filename: "firstbadge.jpg", content_type: "image/jpg")
+first_badge.save
+
+puts "baby helper badge"
+file = URI.open("https://static9.depositphotos.com/1229718/1127/i/950/depositphotos_11274573-stock-photo-police-badge.jpg")
+babyhelper_badge = Badge.new(name: "Baby helper", threshold: 200)
+babyhelper_badge.photo.attach(io: file, filename: "babyhelper.jpg", content_type: "image/jpg")
+babyhelper_badge.save
+
+# puts "junior helper badge"
+# file = URI.open("https://static9.depositphotos.com/1229718/1127/i/950/depositphotos_11274573-stock-photo-police-badge.jpg")
+# juniorhelper_badge = Badge.new(name: "Baby helper", threshold: 300)
+# juniorhelper_badge.photo.attach(io: file, filename: "juniorhelper.jpg", content_type: "image/jpg")
+# juniorhelper_badge.save
+
 puts "finish"
