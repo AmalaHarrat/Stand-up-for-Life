@@ -7,6 +7,7 @@ class Mission < ApplicationRecord
   validates :title, :description, :category, :city, :max_participant, :duration, :date, presence: true
   validates :description, length: { minimum: 3 }
   validates :city, format: { with: /[a-zA-Z]/ }
+  validate :validate_images
 
   geocoded_by :address_from_components
   after_validation :geocode, if: :will_save_change_to_address?
@@ -45,5 +46,13 @@ class Mission < ApplicationRecord
     else
       return :futur
     end
+  end
+
+  private
+
+  def validate_images
+    return if photos.count <= 5
+
+    errors.add(:photos, 'Vous pouvez télécharger que 5 photos maximum')
   end
 end
