@@ -23,9 +23,14 @@ class Organisation::MissionsController < ApplicationController
     end
   end
 
-  # def edit
-  # A VOIR SI NECESSAIRE
-  # end
+   def edit
+   @mission = Mission.find(params[:id])
+   end
+
+   def update
+    @mission = Mission.find(params[:id])
+    @mission = Mission.update(mission_params)
+   end
 
   private
 

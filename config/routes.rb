@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   namespace :organisation do
-    resources :missions, only: %i[index show new create]
+    resources :missions, only: %i[index show new create edit]
     resources :bookings, only: %i[edit update]
   end
 
