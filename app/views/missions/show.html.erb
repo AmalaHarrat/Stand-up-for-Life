@@ -1,8 +1,8 @@
 <div class="container my-3 mx-5">
   <div class="col-5">
     <div class="d-md-flex justify-content-between">
-      <% if current_user.photo&.first&.key? %>
-        <%= cl_image_tag current_user.photo.first.key%>
+      <% if current_user.photo.key? %>
+        <%= cl_image_tag current_user.photo.key, height: 70, width: 70 %>
       <% else %>
         <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
       <% end %>
@@ -39,8 +39,34 @@
       <div class="col-2">
         <%= simple_form_for([@mission, Booking.new]) do |f| %>
         <%= f.input :mission_id, input_html: {value: @mission.id}, as: :hidden %>
-        <%= f.submit "Je participe !", class: "btn btn-ghost mb-3"%>
+        <%= f.submit "Je participe !", class: "btn btn-ghost mb-3", data: {bs_toggle:"modal", bs_target:"#exampleModal"}%>
         <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+<%# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> %>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Félicitation!<br>Tu es maintenant inscrit(e)!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Un membre de Maison de la Nature<br>va t'envoyer les infos de la mission</p>
+      </div>
+      <div class="modal-footer">
+      <p><small>Tu peux également participer en faisant un don <br> ou en nous payant un café!</small></p>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn-donation">Faire un don!</button>
       </div>
     </div>
   </div>

@@ -1,8 +1,8 @@
 <div class="container my-3 mx-5">
   <div class="col-5">
     <div class="d-md-flex justify-content-between">
-      <% if current_user.photo&.first&.key? %>
-        <%= cl_image_tag current_user.photo.first.key, height: 30, width: 40%>
+      <% if current_user.photo.key? %>
+        <%= cl_image_tag current_user.photo.key, height: 70, width: 70%>
       <% else %>
         <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
       <% end %>
@@ -12,14 +12,20 @@
 </div>
 
 <div class="container">
-  <div class="col-6">
-    <div class="images">
+  <div class="principale">
       <% if @mission.photos&.first&.key? %>
+    <div class="principale-img">
         <%= cl_image_tag @mission.photos.first.key,  height: 400, width: 600 %>
+    </div>
+        <div class="galery">
+          <% @mission.photos.drop(1).each do |photo| %>
+            <%= cl_image_tag photo.key %>
+          <% end %>
+        </div>
       <% else %>
         <img src="<%=image_path('default.jpg')%>" alt="background">
       <% end %>
-    </div>
+  </div>
     <div class="mb-3">
       <div class="fontawsome">
         <i class="fa-solid fa-pen"></i>
@@ -29,8 +35,8 @@
       <h2><%= @mission.title.capitalize %></h2>
       <small class="text-muted">Durée: <%= @mission.duration%> h • <%=@mission.city.capitalize%> • <%=@mission.category %></small>
     </div>
-  </div>
 </div>
+
 
 <div class="container">
   <div class="col-9">
