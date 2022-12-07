@@ -11,15 +11,21 @@
   </div>
 </div>
 
-<div class="container my class">
-  <div class="col-9">
-    <div class="images">
+<div class="container">
+  <div class="principale">
       <% if @mission.photos&.first&.key? %>
-        <%= cl_image_tag @mission.photos.first.key, height: 400, width: 600 %>
+        <div class="principale-img">
+          <%= cl_image_tag @mission.photos.first.key,  height: 400, width: 600 %>
+        </div>
+        <div class="galery">
+          <% @mission.photos.drop(1).each do |photo| %>
+            <%= cl_image_tag photo.key %>
+          <% end %>
+        </div>
       <% else %>
         <img src="<%=image_path('default.jpg')%>" alt="background">
       <% end %>
-    </div>
+  </div>
     <div class="mb-3">
       <h2><%= @mission.title.capitalize %></h2>
       <small class="text-muted">Durée: <%= @mission.duration%> h • <%=@mission.city.capitalize %> • <%= @mission.category %></small>
