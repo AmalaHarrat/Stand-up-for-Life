@@ -13,7 +13,7 @@
         :label => "Ville" %>
         <%= f.input :category,:label => "Catégorie", as: :select, collection: ["humanitaire 🙏🏻", "environnement 🌱", "animaux 🐶"]  %>
         <%= f.input :date, as: :date, html5: true %>
-        <%= f.submit "Rechercher"%>
+        <%= f.submit "Rechercher", class: "btn btn-ghost-white"%>
       <% end %>
     </div>
   <%# <%= link_to " ⏎ Back", root_path, class: "btn btn-ghost-white", style: "color: white; border: 1px solid white;" %>
