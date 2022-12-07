@@ -3,14 +3,27 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
+  height: 400px;
+  width: 100%;
+
+  .carousel {
+    height: 60%;
+    width: 100%;
+  }
+
+  .carousel-inner, .carousel-item {
+    height: 100%;
+    width: 100%;
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    object-position: center;
+    width: 100%;
+  }
 }
 
-.card-mission > img {
-  height: 250px;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-}
 
 .card-mission h3 {
   font-size: 16px;
@@ -27,7 +40,6 @@
 .card-mission a {
   text-decoration: none;
   color: #564C4D;
-  margin: 4px;
 }
 
 .card-mission .card-mission-infos {

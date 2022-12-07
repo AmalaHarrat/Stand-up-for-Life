@@ -25,13 +25,34 @@
     <div class="cards-mission col-md-7">
       <% @missions.each do |mission| %>
         <div class="zoom">
-          <%= link_to mission_path(mission) do %>
             <div class="card-mission m-3 ">
-              <% if mission.photos&.first&.key? %>
-                <%= cl_image_tag mission.photos.first.key, height: 300, width: 400 %>
-              <% else %>
-                <img src="<%=image_path('default.jpg')%>" alt="background">
-              <% end %>
+              <div id="<%="carousel-mission-#{mission.id}"%>" class="carousel slide" data-bs-ride="false">
+
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <% if mission.photos&.first&.key? %>
+                        <%= cl_image_tag mission.photos.first.key, class: "d-block w-100" %>
+                      <% else %>
+                        <img src="<%=image_path('default.jpg')%>" alt="background", class="d-block w-100" >
+                      <% end %>
+                    </div>
+                    <% mission.photos.drop(1).each do |photo|%>
+                      <div class="carousel-item">
+                        <%= cl_image_tag photo.key, class: "d-block w-100" %>
+                      </div>
+                    <% end %>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#<%="carousel-mission-#{mission.id}"%>" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#<%="carousel-mission-#{mission.id}"%>" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+
+              </div>
+              <%= link_to mission_path(mission) do %>
               <div class="card-mission-infos">
                 <h3><%= mission.title %></h3>
                 <div class="mb-3">
@@ -44,7 +65,7 @@
                   </div>
                   <small class="card-mission-location"> 📍 <%=mission.city.capitalize%></small>
                 </div>
-                  <p><%= truncate(mission.description, :length => 100)%></p>
+                  <p><%= truncate(mission.description, :length => 100)%>Voir plus</p>
                 </div>
               </div>
           <% end %>

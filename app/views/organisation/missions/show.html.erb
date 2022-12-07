@@ -14,9 +14,9 @@
 <div class="container">
   <div class="principale">
       <% if @mission.photos&.first&.key? %>
-    <div class="principale-img">
-        <%= cl_image_tag @mission.photos.first.key,  height: 400, width: 600 %>
-    </div>
+        <div class="principale-img">
+          <%= cl_image_tag @mission.photos.first.key,  height: 400, width: 600 %>
+        </div>
         <div class="galery">
           <% @mission.photos.drop(1).each do |photo| %>
             <%= cl_image_tag photo.key %>
