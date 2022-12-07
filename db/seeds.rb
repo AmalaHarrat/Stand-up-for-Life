@@ -29,9 +29,9 @@ Mission.create(user: benoit, title: "Soigne les chatons abandonnés ou perdues",
 Mission.create(user: saliha, title: "Maraude dans Bordeaux", description: "Nous avons besoin de bras et de sourires pour une maraude prévue dimanche. Si des personnes sont intéressées, n'hésitez pas à nous contacter pour plus de détails. " , category: "humanitaire 🙏🏻", address: "Place de la Victoire" , city: "Bordeaux" , date: "06/01/2023" , hour: 15, duration: 2, max_participant: 4 )
 Mission.create(user: saliha, title: "Tournois de football caritatif", description: "Bienvenue dans notre projet de solidarité international, qui sera pour le Togo ! Venez participer à notre tournois de foot qui permttra de recolletter des fonds pour construire un puis au Togo" , category: "humanitaire 🙏🏻", address: "Complexe Ginga foot" , city: "Merignac" , date: "17/01/2023" , hour: 15, duration: 5, max_participant: 15 )
 
-puts "BOOKING CREATION"
-Booking.create(user: alice, mission: Mission.first)
-Booking.create(user: alice, mission: Mission.second)
+# puts "BOOKING CREATION"
+# Booking.create(user: alice, mission: Mission.first)
+# Booking.create(user: alice, mission: Mission.second)
 
 puts "BADGES CREATION"
 # Attention le seuil est celui des badges pas des scores
