@@ -1,6 +1,8 @@
 class DashboardsController < ApplicationController
   def show
     # Je veux acceder aux missions bookée par current user
+    @progression = current_user.total_score % 100
+    @next_badge = 100 - @progression
   end
 end
 
