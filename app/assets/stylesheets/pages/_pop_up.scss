@@ -3,6 +3,7 @@
 }
 .modal-title {
   text-align: center;
+  flex-grow: 1;
 }
 
 .modal-body {
@@ -12,6 +13,21 @@
 
 .modal-footer p {
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.22);
-  text-align: left;
   margin-top: 40px;
+  flex-grow: 1;
+}
+
+.btn-donate {
+  color: black;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.btn-donate:hover {
+  opacity: 1;
+  color: #5b8570;
 }
