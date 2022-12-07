@@ -8,6 +8,7 @@ class Mission < ApplicationRecord
   validates :description, length: { minimum: 3 }
   validates :city, format: { with: /[a-zA-Z]/ }
   validate :validate_images
+  validate :validate_upload_size
 
   geocoded_by :address_from_components
   after_validation :geocode, if: :will_save_change_to_address?
@@ -54,5 +55,14 @@ class Mission < ApplicationRecord
     return if photos.count <= 5
 
     errors.add(:photos, 'Vous pouvez télécharger que 5 photos maximum')
+  end
+
+  def validate_upload_size
+    photos.each do |photo|
+      if photo.blob.byte_size > 10.megabytes
+        errors.add(:photos, "La taille de la photo #{photo.blob.filename} est trop grande")
+      end
+    end
+
   end
 end
