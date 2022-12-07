@@ -2,9 +2,13 @@
 <div id="dashboard">
   <div class="container my-3 mx-5">
     <h1 class="text-center">MON TABLEAU DE BORD</h1>
-    <div class="col-5">
-      <div class="d-md-flex justify-content-around">
-        <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
+    <div class="col-4">
+      <div class="d-md-flex justify-content-evenly">
+        <% if current_user.photo.key? %>
+          <%= cl_image_tag current_user.photo.key, class: "avatar-show" %>
+        <% else %>
+          <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
+        <% end %>
         <h2>Salut <%= current_user.firstname %> !</h2>
       </div>
     </div>
@@ -62,11 +66,34 @@
             <em>Mon score actuel:</em>
             <p><%= current_user.total_score %></p>
           </div>
+
           <div id="score-calculation">
-          <% if current_user.total_score > 1%>
-            <p>Bravo <%= current_user.firstname %>, <br> Continue ton engagement! Plus que <em><%= 100 - (current_user.total_score) %> points </em>avant ton prochain badge !</p>
+          <% if current_user.total_score > 1 %>
+            <p>Bravo <%= current_user.firstname %>, <br> Continue ton engagement! Plus que <em><%= @next_badge %> points </em>avant ton prochain badge !</p>
           <% end %>
           </div>
+          <div class="score-level">
+            <div data-controller="score-animation" data-score-animation-scoring-value="<%=(472-472*0.01*@progression).to_i%>" class="skill">
+              <div class="outer">
+                <div class="inner">
+                  <div id="percent_score_number">
+                    <%= @progression %>%
+                  </div>
+                </div>
+              </div>
+
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                      <defs>
+                          <linearGradient id="GradientColor">
+                            <stop offset="0%" stop-color="#e91e63" />
+                            <stop offset="100%" stop-color="#673ab7" />
+                          </linearGradient>
+                      </defs>
+                      <circle data-score-animation-target="circle" cx="80" cy="80" r="70" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+
           <div class="badge-table">
           <% if current_user.total_score > 1%>
             <div class="badge" data-controller="badge" data-badge-target="badge" data-action="mousemove->badge#mousemove">

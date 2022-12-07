@@ -12,7 +12,7 @@
   margin: 5px;
 
   h3{
-    padding-top: 20px;
+    padding-top: 10px;
   }
 }
 
@@ -120,3 +120,73 @@
   color: white;
   }
 }
+
+// .progress{
+//   width: 50%;
+//   height: 40px;
+//   position: absolute;
+//   top: 145px;
+//   left: 280px;
+// }
+
+.score-level{
+  position: absolute;
+  top: 65px;
+  right: 80px;
+}
+
+.skill{
+  width: 35%;
+  height: 160px;
+  position: relative;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.outer{
+  width: 160px;
+  height: 160px;
+  padding: 20px;
+  border-radius: 50%;
+  box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+              -6px -6px 10px -1px rgba(0,0,0,0.15);
+}
+
+.inner{
+  height: 120px;
+  width:120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: inset 4px 4px 4px rgba(0,0,0,0.2),
+              inset -4px -4px 6px -1px rgba(0,0,0,0.15),
+              -0.5px -0.5px 0px rgba(0,0,0,0.15),
+              0.5px 0.5px 0px rgba(0,0,0,0.15),
+}
+
+#percent_score_number{
+  font-weight: 600;
+  color: white;
+}
+
+circle{
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 20px;
+  stroke-dasharray: 472;
+  // stroke-dashoffset: 472;
+  animation: anim 2s linear forwards;
+}
+
+svg{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+// @keyframes anim{
+//   100%{
+//     stroke-dashoffset: 94;
+//   }
+// }
