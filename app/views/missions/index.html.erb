@@ -7,7 +7,7 @@
     <p> "Il ne peut y avoir de plus grand don que celui de donner son temps et son énergie pour aider les autres sans rien attendre en retour" <small> <em>Nelson Mandela</em> </small>
     <div class="container-form">
       <%= simple_form_for(:search, url: root_path, html: { method: :get }) do |f| %>
-        <%= f.input :city,
+        <%= f.input :city, class: "form-control",
         input_html: {data: {address_autocomplete_target: "address"}},
         wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}},
         :label => "Ville" %>
