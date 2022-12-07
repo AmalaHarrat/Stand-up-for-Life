@@ -29,13 +29,13 @@ class Organisation::MissionsController < ApplicationController
 
   def update
     @mission = Mission.find(params[:id])
-    @mission = Mission.update(mission_params)
+    @mission.update(mission_params)
     redirect_to organisation_mission_path(@mission)
   end
 
   private
 
   def mission_params
-    params.require(:mission).permit(:title, :description, :category, :address, :city, :date, :duration, :max_participant, photos: [])
+    params.require(:mission).permit(:title, :description, :category, :address, :city, :date, :duration, :max_participant, :hour, photos: [])
   end
 end
