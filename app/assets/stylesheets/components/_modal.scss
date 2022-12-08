@@ -1,0 +1,22 @@
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+
+  .btn-ghost {
+    color: white;
+    border: 1px solid white;
+
+    &:hover {
+      background-color: white;
+      color: #91b0a0;
+    }
+  }
+}
+
+.modal-content {
+  background-color: #91b0a0;
+  color: white;
+}
