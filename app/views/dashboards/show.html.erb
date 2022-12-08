@@ -42,7 +42,7 @@
           <% end %>
           <% if current_user.past_missions.first == nil%>
             <% else %>
-            <h3>MISSIONS PASSÉE:</h3>
+            <h3>MISSIONS PASSÉES:</h3>
           <% end %>
           <% current_user.past_missions.each do |mission| %>
           <div class="card-product opacity-50">
@@ -70,7 +70,7 @@
 
           <div id="score-calculation">
           <% if current_user.total_score > 1 %>
-            <p>Bravo <%= current_user.firstname %>, <br> Continue ton engagement! Plus que <em><%= @next_badge %> points </em>avant ton prochain badge !</p>
+            <p>Bravo <%= current_user.firstname %>, <br> Continue ton engagement ! Plus que <em><%= @next_badge %> points </em>avant ton prochain badge !</p>
           <% end %>
           </div>
           <div class="score-level">
@@ -101,7 +101,7 @@
             <%=render "shared/badges"%>
             </div>
           <% else %>
-          <h4>Tu n'as pas encore de badge!</h4>
+          <h4>Tu n'as pas encore de badge !</h4>
           <p>Réalise ta première mission pour obtenir ton 1er badge 😍</p>
           <% end %>
           </div>
