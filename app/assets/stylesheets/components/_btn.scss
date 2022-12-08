@@ -59,11 +59,34 @@
   color: #5b8570;
 }
 
-.fontawsome {
+.fontawsome i {
   display: inline-block;
   height: 30px;
-  color: rgb(170, 166, 166);
+  color: rgba(170, 166, 166, 0.445);
   margin-bottom: 5px;
+}
+
+
+.btn-participate {
+  background-color: #91B0A0;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  // flex-shrink: 0;
+  font-size: 20px;
+  height: 4rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+}
+
+.btn-participate:hover {
+  box-shadow: #91B0A0 0 1px 30px;
+  background-color: #91B0A0;
+  transition-duration: .1s;
+  color: #FFFFFF;
 }
 
 .btn-close {
