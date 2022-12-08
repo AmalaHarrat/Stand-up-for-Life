@@ -1,8 +1,8 @@
 <div class="container my-3 mx-5">
   <div class="col-5">
     <div class="d-md-flex justify-content-between">
-      <% if current_user.photo&.first&.key? %>
-        <%= cl_image_tag current_user.photo.first.key, height: 30, width: 40%>
+      <% if current_user.photo.key? %>
+        <%= cl_image_tag current_user.photo.key, height: 30, width: 40%>
       <% else %>
         <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
       <% end %>
@@ -41,36 +41,36 @@
 
 <div class="container">
   <div class="col-9">
-      <div class="mb-3">
-        <p class="m-0"><u>Date: </u><%= @mission.date %></p>
-        <p><u>Heure</u> <%= @mission.hour %> </p>
-        <p><u>Lieu de rendez-vous: </u><%= @mission.address.capitalize %></p>
-        <p><%= @mission.description%></p>
-      </div>
+    <div class="mb-3">
+      <p class="m-0"><u>Date: </u><%= @mission.date %></p>
+      <p><u>Heure</u> <%= @mission.hour %> </p>
+      <p><u>Lieu de rendez-vous: </u><%= @mission.address.capitalize %></p>
+      <p><%= @mission.description%></p>
+    </div>
   </div>
-
-<div class="col-6">
-  <div class="participants my-5">
-    <h2>Personnes inscrites:</h2>
-    <ol>
+  <div class="col-6">
+    <div class="participants my-5">
+      <h2>Personnes inscrites:</h2>
+      <ol>
         <% @mission.bookings.each do |booking| %>
         <li class = "mt-3">
         <h4><%= booking.user.firstname %></h4>
-        <%= simple_form_for :booking, url: organisation_booking_path(booking), method: :patch do |f|%>
-        <div class= "d-flex justify-content-between">
-          <div class="col-sm-offset-6 col-md-7 m-0">
-            <%= f.input :scoring, :label => "Score a attribuer (1h = 10 pts)"%>
-          </div>
-          <div class="col-sm-offset-3 col-sm-3 col-md-4 mx-5">
-          <%= f.button :submit, "J'attribue à #{booking.user.firstname}", class:"btn btn-ghost-white" %>
-          </div>
-        </div>
-        <% if booking.scoring %>
-          <small class = "m-0">Vous avez attribué <%= booking.scoring.to_i %> points à <%= booking.user.firstname %></small>
-        <% end %>
-        <% end %>
+          <%= simple_form_for :booking, url: organisation_booking_path(booking), method: :patch do |f|%>
+            <div class= "d-flex justify-content-between">
+              <div class="col-sm-offset-6 col-md-7 m-0">
+                <%= f.input :scoring, :label => "Score a attribuer (1h = 10 pts)"%>
+              </div>
+              <div class="col-sm-offset-3 col-sm-3 col-md-4 mx-5">
+                <%= f.button :submit, "J'attribue à #{booking.user.firstname}", class:"btn btn-ghost-white" %>
+              </div>
+            </div>
+            <% if booking.scoring %>
+            <small class = "m-0">Vous avez attribué <%= booking.scoring.to_i %> points à <%= booking.user.firstname %></small>
+            <% end %>
+          <% end %>
         </li>
         <% end %>
-    </ol>
+      </ol>
+    </div>
   </div>
 </div>
