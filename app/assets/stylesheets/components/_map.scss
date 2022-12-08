@@ -1,25 +1,48 @@
 .geo {
-  width: 600px;
+  width: 550px;
   height: 85vh;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 10px;
+  border-radius: 20px;
   margin-top: 17px;
   grid: 1fr;
   margin-left: 5px;
   margin-right: 5px;
 }
+.body-index {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5px;
+}
 
+// POP UP
 .mapboxgl-popup {
   max-width: 200px;
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
+  background-color: rgba(255, 255, 255, 0.397);
+  backdrop-filter: blur(5px);
+  border: 2px solid #91b0a0;
 }
 
-.body-index {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 5px;
+// DATA
+.map-mission-infos{
+  h6{
+    margin: 0;
+    text-align: center;
+    color: #554B4D;
+  }
+
+}
+
+.map-mission-infos-location {
+  .small{
+  margin-top: 20px;
+  line-height: 1px;
+  color: #554B4D;
+}
+}
+
+small {
+  margin: 0;
 }
