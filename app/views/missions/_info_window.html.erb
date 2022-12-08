@@ -3,6 +3,6 @@
   <small class="text-muted"> Durée: <%= mission.duration %> h • <%= mission.category.capitalize %></small>
   <div class="map-mission-infos-location">
       <small class="text-muted">📍 <%=mission.city.capitalize%></small>
-      <p class="small"><u> Date</u>:  <%= mission.date %></p>
+      <p class="small"><u> Date</u>:  <%= mission.date.strftime('%d/%m/%Y') %></p>
       <p class="small"><u> Heure</u>:  <%= mission.hour %> h</p>
   </div>
