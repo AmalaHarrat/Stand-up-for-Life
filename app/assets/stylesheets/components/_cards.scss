@@ -78,6 +78,49 @@ a {
   transition: 0.3s ease-in-out;
   }
 
+.card-mission-orga {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  height: 400px;
+  width: 95%;
+
+  img {
+    height: 65%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p {
+    font-size: 14px;
+    opacity: .7;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #564C4D;
+  }
+
+  .card-mission-infos {
+    padding: 16px;
+  }
+
+  .card-mission-infos-location {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
   // CARDS DASHBOARD PRODUCT
   .card-product {
     overflow: hidden;
