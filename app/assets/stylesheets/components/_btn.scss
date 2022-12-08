@@ -89,8 +89,8 @@
   color: #FFFFFF;
 }
 
-@media (min-width: 768px) {
-  .btn-participate {
-    padding: 0 2.6rem;
-  }
+.btn-close {
+  top: 15px !important;
+  position: absolute;
+  color: white;
 }
