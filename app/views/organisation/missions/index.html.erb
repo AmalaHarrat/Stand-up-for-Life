@@ -18,8 +18,13 @@
             </div>
               <div class="card-mission-infos-location">
                 <div>
+<<<<<<< HEAD
                   <p class="small"><u> Date</u>:  <%= mission.date %></p>
                   <p class="small"><u> Heure</u>:  <%= mission.hour %> :00</p>
+=======
+                  <p class="small"><u> Date: </u><%= mission.date.strftime('%d/%m/%Y') %></p>
+                  <p class="small"><u> Heure: </u><%= mission.hour %></p>
+>>>>>>> master
                 </div>
                 <small class="card-mission-location"> 📍 <%=mission.city.capitalize%></small>
               </div>
