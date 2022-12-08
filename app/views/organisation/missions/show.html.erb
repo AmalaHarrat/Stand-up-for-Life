@@ -58,10 +58,10 @@
           <%= simple_form_for :booking, url: organisation_booking_path(booking), method: :patch do |f|%>
             <div class= "d-flex justify-content-between">
               <div class="col-sm-offset-6 col-md-7 m-0">
-                <%= f.input :scoring, :label => "Score a attribuer (1h = 10 pts)"%>
+                <%= f.input :scoring, as: :numeric, :label => "Score a attribuer (1h = 10 pts)" :placeholder => %>
               </div>
               <div class="col-sm-offset-3 col-sm-3 col-md-4 mx-5">
-                <%= f.button :submit, "J'attribue à #{booking.user.firstname}", class:"btn btn-ghost-white" %>
+                <%= f.button :submit, "#{booking.user.firstname} ✓", class:"btn btn-ghost-white" %>
               </div>
             </div>
             <% if booking.scoring %>
