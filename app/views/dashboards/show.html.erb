@@ -96,14 +96,14 @@
           </div>
 
           <div class="badge-table">
-          <% if current_user.total_score > 1%>
-            <div class="badge" data-controller="badge" data-badge-target="badge" data-action="mousemove->badge#mousemove">
-            <%=render "shared/badges"%>
-            </div>
-          <% else %>
-          <h4>Tu n'as pas encore de badge !</h4>
-          <p>Réalise ta première mission pour obtenir ton 1er badge 😍</p>
-          <% end %>
+            <% if current_user.total_score > 1%>
+              <div class="badge" data-controller="badge" data-badge-target="badge" data-action="mousemove->badge#mousemove">
+              <%=render "shared/badges"%>
+              </div>
+            <% else %>
+            <h4>Tu n'as pas encore de badge !</h4>
+            <p>Réalise ta première mission pour obtenir ton 1er badge 😍</p>
+            <% end %>
           </div>
         </div>
         </div>
