@@ -49,7 +49,6 @@
         <p><%= @mission.description%></p>
       </div>
     </div>
-<<<<<<< HEAD
     <div class="">
       <div class="participants sticky-top">
         <h2>Personnes inscrites:</h2>
@@ -65,20 +64,6 @@
                 <div class="col-sm-offset-3 col-sm-3 col-md-4 mx-5">
                   <%= f.button :submit, "#{booking.user.firstname} ✓", class:"btn btn-ghost-white" %>
                 </div>
-=======
-  </div>
-  <div class="col-6">
-    <div class="participants my-5">
-      <h2>Personnes inscrites :</h2>
-      <ol>
-        <% @mission.bookings.each do |booking| %>
-        <li class = "mt-3">
-        <h4><%= booking.user.firstname %></h4>
-          <%= simple_form_for :booking, url: organisation_booking_path(booking), method: :patch do |f|%>
-            <div class= "d-flex justify-content-between">
-              <div class="col-sm-offset-6 col-md-7 m-0">
-                <%= f.input :scoring, :label => "Score a attribuer (1h = 10 pts)"%>
->>>>>>> master
               </div>
               <% if booking.scoring %>
               <small class = "m-0">Vous avez attribué <%= booking.scoring.to_i %> point(s) à <%= booking.user.firstname %></small>
