@@ -1,4 +1,9 @@
 #filter-form {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transform: translateY(50%);
 
   form {
     display:flex;
@@ -6,17 +11,23 @@
     align-items: center;
     justify-content: space-evenly;
     color: white;
-    margin-top: 55px;
-    border-radius: 30px;
+    /* margin-top: 55px; */
+    border-radius: 50px;
     background-color: #91b0a0;
     text-align: center;
-    margin-left: 1rem;
+    margin: 0 1rem;
+    padding: 0.35rem;
   }
 
   .form-control, .form-select, #search_date {
-    border-radius: 16px;
     background-color: #91b0a0;
     color:white;
+    border: 0;
+    margin: 16px, 0;
+
+    &::placeholder {
+      color: white;
+    }
   }
 
   .form-control, .form-select, #search_date :focus {
@@ -24,21 +35,20 @@
   }
 
   form > div {
-    margin-top: 1rem;
-    margin-right: 40px;
+/*     margin-top: 1rem;
+    margin-right: 40px; */
+    margin: 0 !important;
   }
 
   form > div:not(:last-of-type) {
     padding-right: 2rem;
     border-right: 2px solid white;
-
   }
 
 }
 
 
 .btn-ghost-white-banner{
-  margin-top: 35px;
   color: white;
   border: 1px solid white;
   padding: 8px 24px;
