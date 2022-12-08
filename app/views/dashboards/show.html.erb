@@ -1,112 +1,113 @@
 <% if current_user.organisme == false %>
 <div id="dashboard">
-  <h1 class="text-center">MON TABLEAU DE BORD</h1>
   <div class="container my-3 mx-5">
-    <div class="col-3">
-      <div class="avatar-flex">
-        <% if current_user.photo.key? %>
-          <%= cl_image_tag current_user.photo.key, height: 30, width: 40%>
-        <% else %>
-          <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
-        <% end %>
-        <h2>Salut <%= current_user.firstname %> !</h2>
+    <div class="col-8">
+      <div class="welcome-dasboard">
+        <div class="welcome-avatar-dashboard">
+          <% if current_user.photo.key? %>
+            <%= cl_image_tag current_user.photo.key, height: 30, width: 40%>
+          <% else %>
+            <%= image_tag "avatarFemme.jpg", class: "avatar-show" %>
+          <% end %>
+          <h2>Salut <%= current_user.firstname %> !</h2>
+          <small>Bénévole </small>
+        </div>
+        <h1 class="text-center">MON TABLEAU DE BORD</h1>
       </div>
     </div>
   </div>
 
   <div class="container">
-    <div class="row">
-      <div class="dashboard-body">
-        <div class="mission-table">
-          <% if current_user.futur_missions.first == nil %>
-            <h3>MISSIONS À VENIR:</h3>
-            <small class="text-muted font-weight-light">Aucune mission à venir</small>
-            <% else %>
-            <h3>MISSIONS À VENIR:</h3>
+    <div class="dashboard-body">
+      <div class="mission-table">
+        <% if current_user.futur_missions.first == nil %>
+          <h3>MISSIONS À VENIR:</h3>
+          <small class="text-muted font-weight-light">Aucune mission à venir</small>
+          <% else %>
+          <h3>MISSIONS À VENIR:</h3>
+        <% end %>
+        <% current_user.futur_missions.each do |mission| %>
+        <div class="card-product">
+          <% if mission.photos&.first&.key? %>
+            <%= cl_image_tag mission.photos.first.key, height: 300, width: 400 %>
+          <% else %>
+            <img src="<%=image_path('default.jpg')%>" alt="background">
           <% end %>
-          <% current_user.futur_missions.each do |mission| %>
-          <div class="card-product">
-            <% if mission.photos&.first&.key? %>
-              <%= cl_image_tag mission.photos.first.key, height: 300, width: 400 %>
-            <% else %>
-              <img src="<%=image_path('default.jpg')%>" alt="background">
-            <% end %>
-            <div class="card-product-infos">
-              <h2><%= mission.title.capitalize %></h2>
-              <p><u>Date</u> :  <%=mission.date.strftime('%d/%m/%Y') %></p>
-              <p><u>Heure</u> :  <%=mission.hour %> :00</p>
-              <p><u>Lieu de rendez-vous</u> :  <%= mission.address%></p>
-              <small>Pour annuler votre présence, merci de contacter directement l'organisme</small>
-            </div>
+          <div class="card-product-infos">
+            <h2><%= mission.title.capitalize %></h2>
+            <p><u>Date</u> :  <%=mission.date.strftime('%d/%m/%Y') %></p>
+            <p><u>Heure</u> :  <%=mission.hour %> :00</p>
+            <p><u>Lieu de rendez-vous</u> :  <%= mission.address%></p>
+            <small>Pour annuler votre présence, merci de contacter directement l'organisme</small>
           </div>
-          <% end %>
-          <% if current_user.past_missions.first == nil%>
-            <% else %>
-            <h3>MISSIONS PASSÉES:</h3>
-          <% end %>
-          <% current_user.past_missions.each do |mission| %>
-          <div class="card-product opacity-50">
-            <% if mission.photos&.first&.key? %>
-              <%= cl_image_tag mission.photos.first.key, height: 300, width: 400 %>
-            <% else %>
-              <img src="<%=image_path('default.jpg')%>" alt="background">
-            <% end %>
-            <div class="card-product-infos">
-              <h2><%= mission.title.capitalize %></h2>
-              <p><u>Date</u> :  <%=mission.date.strftime('%d/%m/%Y') %></p>
-              <p><u>Heure du rendez-vous</u> :  <%= mission.hour %></p>
-              <p><u>Lieu de rendez-vous</u> :  <%= mission.address%></p>
-              <small>Pour annuler votre présence, merci de contacter directement l'organisme</small>
-            </div>
-          </div>
-          <% end %>
         </div>
-        <div class="score-table">
-          <h3 class= "text-center">MON ACTIVITÉ</h3>
-          <div id="score">
-            <em>Mon score actuel:</em>
-            <p><%= current_user.total_score %></p>
-          </div>
-
-          <div id="score-calculation">
-          <% if current_user.total_score > 1 %>
-            <p>Bravo <%= current_user.firstname %>, <br> Continue ton engagement ! Plus que <em><%= @next_badge %> points </em>avant ton prochain badge !</p>
+        <% end %>
+        <% if current_user.past_missions.first == nil%>
+          <% else %>
+          <h3>MISSIONS PASSÉES:</h3>
+        <% end %>
+        <% current_user.past_missions.each do |mission| %>
+        <div class="card-product opacity-50">
+          <% if mission.photos&.first&.key? %>
+            <%= cl_image_tag mission.photos.first.key, height: 300, width: 400 %>
+          <% else %>
+            <img src="<%=image_path('default.jpg')%>" alt="background">
           <% end %>
+          <div class="card-product-infos">
+            <h2><%= mission.title.capitalize %></h2>
+            <p><u>Date</u> :  <%=mission.date.strftime('%d/%m/%Y') %></p>
+            <p><u>Heure du rendez-vous</u> :  <%= mission.hour %></p>
+            <p><u>Lieu de rendez-vous</u> :  <%= mission.address%></p>
+            <small>Pour annuler votre présence, merci de contacter directement l'organisme</small>
           </div>
-          <div class="score-level">
-            <div data-controller="score-animation" data-score-animation-scoring-value="<%=(472-472*0.01*@progression).to_i%>" class="skill">
-              <div class="outer">
-                <div class="inner">
-                  <div id="percent_score_number">
-                    <%= @progression %>%
-                  </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="score-table">
+        <h3 class= "text-center">MON ACTIVITÉ</h3>
+        <div id="score">
+          <em>Mon score actuel:</em>
+          <p><%= current_user.total_score %></p>
+        </div>
+
+        <div id="score-calculation">
+        <% if current_user.total_score > 1 %>
+          <p>Bravo <%= current_user.firstname %>, <br> Continue ton engagement ! Plus que <em><%= @next_badge %> points </em>avant ton prochain badge !</p>
+        <% end %>
+        </div>
+        <div class="score-level">
+          <div data-controller="score-animation" data-score-animation-scoring-value="<%=(472-472*0.01*@progression).to_i%>" class="skill">
+            <div class="outer">
+              <div class="inner">
+                <div id="percent_score_number">
+                  <%= @progression %>%
                 </div>
               </div>
-
-              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                      <defs>
-                          <linearGradient id="GradientColor">
-                            <stop offset="0%" stop-color="#e91e63" />
-                            <stop offset="100%" stop-color="#673ab7" />
-                          </linearGradient>
-                      </defs>
-                      <circle data-score-animation-target="circle" cx="80" cy="80" r="70" stroke-linecap="round"/>
-              </svg>
             </div>
-          </div>
 
-          <div class="badge-table">
-            <% if current_user.total_score > 1%>
-              <div class="badge" data-controller="badge" data-badge-target="badge" data-action="mousemove->badge#mousemove">
-              <%=render "shared/badges"%>
-              </div>
-            <% else %>
-            <h4>Tu n'as pas encore de badge !</h4>
-            <p>Réalise ta première mission pour obtenir ton 1er badge 😍</p>
-            <% end %>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                    <defs>
+                        <linearGradient id="GradientColor">
+                          <stop offset="0%" stop-color="#e91e63" />
+                          <stop offset="100%" stop-color="#673ab7" />
+                        </linearGradient>
+                    </defs>
+                    <circle data-score-animation-target="circle" cx="80" cy="80" r="70" stroke-linecap="round"/>
+            </svg>
           </div>
         </div>
+
+        <div class="badge-table">
+        <% if current_user.total_score > 1%>
+          <div class="badge" data-controller="badge" data-badge-target="badge" data-action="mousemove->badge#mousemove">
+          <%=render "shared/badges"%>
+          </div>
+        <% else %>
+        <h4>Tu n'as pas encore de badge !</h4>
+        <p>Réalise ta première mission pour obtenir ton 1er badge 😍</p>
+        <% end %>
         </div>
+      </div>
       </div>
     </div>
   </div>

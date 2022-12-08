@@ -1,14 +1,35 @@
+#dashboard{
+  background-color: #F2F1EF;
+  color:#536976d8
+}
+
+.welcome-dasboard{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.welcome-avatar-dashboard{
+  align-content: center;
+  text-align: center;
+  background-color: #f8f8f8;
+  padding: 30px;
+  border-radius: 62% 38% 74% 26% / 28% 65% 35% 72% ;
+
+  h2{
+    margin: 0;
+  }
+}
+
 .dashboard-body{
   // height: 900px;
   width: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 0px;
   margin: 0px;
 }
 .mission-table{
-  // height: 700px;
-  width: 650px;
+  width: 500px;
   margin: 5px;
 
   h3{
