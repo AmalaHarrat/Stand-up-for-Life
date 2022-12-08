@@ -28,7 +28,7 @@
   </div>
     <div class="my-4">
       <h2><%= @mission.title.capitalize %></h2>
-      <small class="text-muted">Durée: <%= @mission.duration%> h • <%=@mission.city.capitalize %> • <%= @mission.category %></small>
+      <small class="text-muted">Durée:  <%= @mission.duration%> h • <%=@mission.city.capitalize %> • <%= @mission.category %></small>
     </div>
   </div>
 </div>
@@ -37,9 +37,9 @@
   <div class="col-10">
     <div class="d-md-flex justify-content-between">
       <div class="mb-3">
-        <p class="m-0"><u>Date:</u> <%= @mission.date %></p>
-        <p class="m-0"><u>Heure:</u>  <%= @mission.hour %> : 00</p>
-        <p><u>Lieu de rendez-vous:</u> <%= @mission.address.capitalize %></p>
+        <p class="m-0"><u>Date</u> : <%= @mission.date %></p>
+        <p class="m-0"><u>Heure</u> : <%= @mission.hour %>:00</p>
+        <p><u>Lieu de rendez-vous</u> : <%= @mission.address.capitalize %></p>
         <p><%= @mission.description.capitalize%></p>
       </div>
       <div class="col-2">
