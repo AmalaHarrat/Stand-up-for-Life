@@ -5,15 +5,15 @@
     <h1><span> Stand Up For LIFE </h1></span>
     <%# <div> %>
     <p> "Il ne peut y avoir de plus grand don que celui de donner son temps et son énergie pour aider les autres sans rien attendre en retour" <small> <em>Nelson Mandela</em> </small>
-    <div class="container-form">
+    <div class="container-form" id= "filter-form">
       <%= simple_form_for(:search, url: root_path, html: { method: :get }) do |f| %>
         <%= f.input :city, class: "form-control",
         input_html: {data: {address_autocomplete_target: "address"}},
         wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}},
-        :label => "Ville" %>
+        :placeholder => "Choisis ta ville", :label => "Ville" %>
         <%= f.input :category,:label => "Catégorie", as: :select, collection: ["humanitaire 🙏🏻", "environnement 🌱", "animaux 🐶"]  %>
         <%= f.input :date, as: :date, html5: true %>
-        <%= f.submit "Rechercher", class: "btn btn-ghost-white"%>
+        <%= f.submit "Rechercher", class: "btn btn-ghost-white-banner"%>
       <% end %>
     </div>
   <%# <%= link_to " ⏎ Back", root_path, class: "btn btn-ghost-white", style: "color: white; border: 1px solid white;" %>

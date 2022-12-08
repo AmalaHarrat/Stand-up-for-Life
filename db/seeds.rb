@@ -31,7 +31,7 @@ Mission.create(user: saliha, title: "Tournois de football caritatif", descriptio
 
 puts "BOOKING CREATION"
 Booking.create(user: alice, mission: Mission.first)
-Booking.create(user: alice, mission: Mission.second)
+Booking.create(user: alice, mission: Mission.second, scoring: 30)
 
 puts "BADGES CREATION"
 # Attention le seuil est celui des badges pas des scores
