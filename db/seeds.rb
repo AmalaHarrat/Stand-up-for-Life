@@ -27,7 +27,7 @@ Mission.create(user: saliha, title: "Maraude dans Paris", description: "Nous avo
 Mission.create(user: saliha, title: "Maraude dans Villenave", description: "Nous avons besoin de bras et de sourires pour une maraude prévue dimanche. Si des personnes sont intéressées, n'hésitez pas à nous contacter pour plus de détails. " , category: "humanitaire 🙏🏻", address: "gambetta" , city: "Bordeaux" , date: "06/01/2023" , hour: 15, duration: 2, max_participant: 4 )
 Mission.create(user: saliha, title: "Soigne les chatons abandonnés ou perdues", description: "Nous en avons actuellement 43.il y en a qui ont des problèmes de santé (cardiaque, diabète coryza, même un, qu'un chasseur a pris pour cible . Il a eu le fémur cassé le vétérinaire a enlevé le plomb et plâtré le chat.)Parfois ils nous arrivent blessés donc nous devons réagir vite heureusement nous avons notre vétérinaire.En cliquant sur les photos, vous aurez leurs noms et d'autres informations. Nous en avons aussi des jeunes."  , category: "animaux 🐶", address: "2, ( lieu-dit ) la Cartrie ", city: "CHAHAIGNES", date: "30/12/2022", hour: 15, duration: 2, max_participant: 3)
 Mission.create(user: saliha, title: "Maraude dans Bordeaux", description: "Nous avons besoin de bras et de sourires pour une maraude prévue dimanche. Si des personnes sont intéressées, n'hésitez pas à nous contacter pour plus de détails. " , category: "humanitaire 🙏🏻", address: "Place de la Victoire" , city: "Bordeaux" , date: "06/01/2023" , hour: 15, duration: 2, max_participant: 4 )
-Mission.create(user: saliha, title: "Tournois de football caritatif", description: "Bienvenue dans notre projet de solidarité international, qui sera pour le Togo ! Venez participer à notre tournois de foot qui permttra de recolletter des fonds pour construire un puis au Togo" , category: "humanitaire 🙏🏻", address: "Complexe Ginga foot" , city: "Merignac" , date: "17/01/2023" , hour: 15, duration: 5, max_participant: 15 )
+Mission.create(user: Samy, title: "Tournois de football caritatif", description: "Bienvenue dans notre projet de solidarité international, qui sera pour le Togo ! Venez participer à notre tournois de foot qui permttra de recolletter des fonds pour construire un puis au Togo" , category: "humanitaire 🙏🏻", address: "Complexe Ginga foot" , city: "Merignac" , date: "17/01/2023" , hour: 15, duration: 5, max_participant: 15 )
 
 # puts "BOOKING CREATION"
 # Booking.create(user: alice, mission: Mission.first)
@@ -47,10 +47,10 @@ babyhelper_badge = Badge.new(name: "Baby helper", threshold: 200)
 babyhelper_badge.photo.attach(io: file, filename: "babyhelper.jpg", content_type: "image/jpg")
 babyhelper_badge.save
 
-# puts "junior helper badge"
-# file = URI.open("https://static9.depositphotos.com/1229718/1127/i/950/depositphotos_11274573-stock-photo-police-badge.jpg")
-# juniorhelper_badge = Badge.new(name: "Baby helper", threshold: 300)
-# juniorhelper_badge.photo.attach(io: file, filename: "juniorhelper.jpg", content_type: "image/jpg")
-# juniorhelper_badge.save
+puts "junior helper badge"
+file = URI.open("https://static9.depositphotos.com/1229718/1127/i/950/depositphotos_11274573-stock-photo-police-badge.jpg")
+juniorhelper_badge = Badge.new(name: "Baby helper", threshold: 300)
+juniorhelper_badge.photo.attach(io: file, filename: "juniorhelper.jpg", content_type: "image/jpg")
+juniorhelper_badge.save
 
 puts "finish"
