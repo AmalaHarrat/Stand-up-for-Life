@@ -15,3 +15,6 @@ application.register("map", MapController)
 
 import ScoreAnimationController from "./score_animation_controller"
 application.register("score-animation", ScoreAnimationController)
+
+import TypedJsController from "./typed_js_controller"
+application.register("typed-js", TypedJsController)

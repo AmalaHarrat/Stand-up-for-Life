@@ -4,7 +4,7 @@
   position:relative;
   background-size: cover;
   background-position: 80% 50% ;
-  padding: 100px;
+  padding: 60px;
   height: 70vh;
 
 }
@@ -35,11 +35,11 @@
       text-transform: uppercase;
       letter-spacing: .5em;
       display: inline-block;
-      border: 4px double rgba(255,255,255,.25);
-      border-width: 4px 0;
-      padding: 2em 0em;
-      position: absolute;
-      top: 20%;
+      // position: absolute;
+      // border-top: 4px double rgba(255,255,255,.25);
+      // border-width: 4px 0;
+      // padding: 1.5em 0em;
+      // top: 30%;
       // left: 20%;
       width: 40em;
       // margin: 0 0 0 -21em;
@@ -51,17 +51,22 @@
       display: block;
       text-shadow: 0 0 80px rgba(255,255,255,.5);
     }
+  }
 
-    p {
-      font-size: 18px;
-      text-align: center;
-      color: rgb(215, 215, 215);
-      opacity: 1;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-      position: absolute;
-      top: 55%;
-      // left: 20%;
-    }
+  .banner p {
+    font-size: 18px;
+    text-align: center;
+    color: rgb(215, 215, 215);
+    opacity: 1;
+    position: absolute;
+    align-content: center;
+    bottom: 20%;
+    // top: 30%;
+    left: 10%;
+  }
+
+  .typed-cursor .typed-cursor--blink {
+    display: none;
   }
   // @media (min-width:2100px){
   // .shapedividers_com-9182::before{
