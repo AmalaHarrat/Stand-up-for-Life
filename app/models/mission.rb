@@ -14,7 +14,7 @@ class Mission < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   def address_from_components
-    "#{self.address}, #{self.city}"
+    "#{address}, #{city}"
   end
   # validate :expiration_date_cannot_be_in_the_past
   # validate :user_an_organisation?, on: :create
@@ -38,7 +38,7 @@ class Mission < ApplicationRecord
   # end
 
   def past?
-    self.date < Date.today
+    date < Date.today
   end
 
   def progress
@@ -63,6 +63,5 @@ class Mission < ApplicationRecord
         errors.add(:photos, "La taille de la photo #{photo.blob.filename} est trop grande")
       end
     end
-
   end
 end

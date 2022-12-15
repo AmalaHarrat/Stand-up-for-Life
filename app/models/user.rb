@@ -23,18 +23,17 @@ class User < ApplicationRecord
     #   booking.scoring
     # end.sum
     # METHODE SIMPLIFIEE
-    self.bookings.map(&:scoring).reject(&:nil?).sum.to_i
+    bookings.map(&:scoring).reject(&:nil?).sum.to_i
     # METHODE SIMPLIFIEE ++
     # self.bookings.map(&:scoring).compact.sum.to_i
-
   end
 
   def past_missions
-    self.bookings.map(&:mission).select(&:past?)
+    bookings.map(&:mission).select(&:past?)
     # self.bookings.map{|booking| booking.mission}.select{ |mission| mission.past?}
   end
 
   def futur_missions
-    self.bookings.map(&:mission).reject(&:past?)
+    bookings.map(&:mission).reject(&:past?)
   end
 end

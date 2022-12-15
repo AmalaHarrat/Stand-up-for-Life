@@ -1,5 +1,4 @@
 class Organisation::MissionsController < ApplicationController
-
   def index
     # Afficher toutes MES missions
     @missions = current_user.missions
@@ -36,6 +35,7 @@ class Organisation::MissionsController < ApplicationController
   private
 
   def mission_params
-    params.require(:mission).permit(:title, :description, :category, :address, :city, :date, :duration, :max_participant, :hour, photos: [])
+    params.require(:mission).permit(:title, :description, :category, :address, :city, :date, :duration,
+                                    :max_participant, :hour, photos: [])
   end
 end
